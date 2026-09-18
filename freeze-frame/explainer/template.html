@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post 2 · The recipe</title>
+<!-- v3 "recipe" cut. Content comes ONLY from post2_data.js (render.py writes it from post2_data.json).
+     render(t) is deterministic. Beat lengths follow the narration (vo/lines.json): line + 0.2 s,
+     or a longer minimum on cards with prompt text (they carry a "pause to read" chip).
+     window.TIMELINE exposes duration, segments, sound cues and narration cues for render.py. -->
+<style>
+@font-face{font-family:'Inter';font-weight:400;src:url('assets/Inter-400.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:600;src:url('assets/Inter-600.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:700;src:url('assets/Inter-700.woff2') format('woff2');}
+@font-face{font-family:'JB';font-weight:500;src:url('assets/JetBrainsMono-500.woff2') format('woff2');}
+:root{--bg:#000;--fg:#fff;--mid:#A5A9A7;--low:#555;--g:#00EC9B;--ph:#FF3DA5;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1280px;height:720px;overflow:hidden;background:var(--bg);color:var(--fg);
+  font-family:Inter,sans-serif;font-feature-settings:"tnum" 1;-webkit-font-smoothing:antialiased}
+#stage{position:absolute;inset:0;overflow:hidden;background:#000}
+.L{position:absolute;will-change:opacity,transform}
+.g{color:var(--g)}
+img{display:block}
+.chip{display:inline-flex;align-items:center;border:1px solid var(--g);color:var(--g);border-radius:999px;padding:3px 12px;font:600 15px Inter;white-space:nowrap}
+.chip.solid{background:var(--g);color:#000}
+.kv{display:inline-flex;align-items:center;border:1px solid #3a3a3a;color:#ddd;border-radius:6px;padding:3px 10px;font:500 14px JB;white-space:nowrap}
+.cost{font:700 22px Inter;color:#fff}
+.frame{border:1px solid #333;background:#0b0b0b;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover}
+.lbl{font:600 14px Inter;color:var(--mid);margin-top:6px}
+/* header */
+#hdr{left:48px;right:48px;top:24px;height:36px;border-bottom:1px solid #333;display:flex;justify-content:space-between;align-items:flex-start}
+#hdr .t{font:600 16px Inter;letter-spacing:.1em;color:var(--mid)}
+#hdr .steps{display:flex;gap:16px;font:600 14px Inter}
+#hdr .steps span{color:#444}
+#hdr .steps span b{font-family:JB;font-weight:500;margin-right:5px}
+#cap{left:0;right:0;top:622px;text-align:center;font:600 32px/1.2 Inter;letter-spacing:-.01em}
+#badge{right:40px;bottom:40px;width:40px;height:40px}
+/* cards */
+.card{left:48px;top:72px;width:1184px;height:540px}
+.card .top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;height:44px}
+.card .no{font:700 15px JB;color:#000;background:var(--g);border-radius:5px;padding:3px 8px}
+.card .ti{font:700 26px Inter;margin-right:8px}
+.card .sp{flex:1}
+.pbox{position:absolute;border:1px solid #333;border-radius:8px;background:#070707;overflow:hidden}
+.pbox .ph{position:absolute;left:14px;top:9px;font:600 12px Inter;letter-spacing:.14em;color:var(--mid)}
+.pbox .txt{position:absolute;left:14px;right:14px;top:32px;bottom:12px;font-family:JB;font-weight:500;line-height:1.42;
+  color:#e8e8e8;white-space:pre-wrap;overflow:hidden;column-gap:26px;column-fill:auto}
+.pbox .txt .k{color:var(--g)}
+.pbox .txt .d{color:#7d7d7d}
+.pause{position:absolute;right:12px;top:7px;font:700 12px Inter;letter-spacing:.1em;color:#000;background:#e8e8e8;border-radius:4px;padding:2px 8px}
+.arrowD{width:2px;height:26px;background:var(--g);margin:6px auto;position:relative}
+.arrowD:after{content:"";position:absolute;left:-6px;bottom:-4px;border-top:10px solid var(--g);border-left:7px solid transparent;border-right:7px solid transparent}
+.arrowR{width:40px;height:2px;background:var(--g);position:relative;flex:none}
+.arrowR:after{content:"";position:absolute;right:-2px;top:-6px;border-left:11px solid var(--g);border-top:7px solid transparent;border-bottom:7px solid transparent}
+/* block tabs */
+.tabs{display:flex;gap:8px}
+.tabs span{font:600 13px JB;color:#555;border:1px solid #2a2a2a;border-radius:5px;padding:3px 8px}
+.tabs span.on{color:#000;background:var(--g);border-color:var(--g)}
+/* code */
+.code{position:absolute;left:0;top:64px;width:760px;height:420px;border:1px solid #333;border-radius:8px;background:#070707;
+  padding:22px 26px;font:500 21px/1.55 JB;white-space:pre;color:#e8e8e8}
+.code .k{color:var(--g)} .code .d{color:#777} .code .s{color:#f2d27a}
+/* sound */
+.sfx{position:absolute;left:0;top:64px;width:700px;font:500 15px/1.55 JB;columns:2;column-gap:22px}
+.sfx div{break-inside:avoid;color:#e8e8e8}
+.sfx div i{font-style:normal;color:#777}
+.sfx div.un{color:#666}
+.tl{position:absolute;left:0;top:398px;width:1184px;height:120px}
+.tl .bar{position:absolute;left:0;right:0;top:46px;height:4px;background:#333;border-radius:2px}
+.tl .frz{position:absolute;top:40px;height:16px;background:rgba(0,236,155,.18);border:1px solid rgba(0,236,155,.5);border-radius:3px}
+.tl .m{position:absolute;top:28px;width:2px;height:40px;background:var(--g)}
+.tl .ml{position:absolute;top:0;font:600 14px Inter;color:#fff;white-space:nowrap;transform:translateX(-50%)}
+.tl .ts{position:absolute;top:74px;font:500 13px JB;color:#888;transform:translateX(-50%)}
+/* approval */
+#browser{left:48px;top:84px;width:852px;height:500px;border:1px solid #3a3a3a;border-radius:10px;overflow:hidden;background:#14110e}
+#browser .bar{height:28px;background:#1b1b1b;display:flex;align-items:center;gap:7px;padding-left:12px;border-bottom:1px solid #333}
+#browser .bar i{width:10px;height:10px;border-radius:50%;background:#3d3d3d}
+#browser .bar span{font:500 12px JB;color:#888;margin-left:14px}
+#browser .vp{position:absolute;left:0;top:28px;right:0;bottom:0;overflow:hidden}
+#browser .vp img{position:absolute;left:0;top:0;width:852px}
+#checks{left:936px;top:100px;width:300px}
+.ck{display:flex;align-items:center;gap:12px;font:600 22px Inter;color:#444;margin-bottom:20px}
+.ck .box{width:28px;height:28px;border:2px solid #444;border-radius:6px;display:flex;align-items:center;justify-content:center;font:700 18px Inter;color:#000}
+.ck.on{color:#fff}.ck.on .box{background:var(--g);border-color:var(--g)}
+#chkHead{font:600 14px Inter;letter-spacing:.14em;color:var(--mid);margin-bottom:22px}
+#answers{left:190px;top:96px;width:900px}
+#answers .ttl{font:600 15px Inter;color:var(--mid);margin-bottom:12px;letter-spacing:.04em}
+#answers .wrap{border:2px solid var(--g);border-radius:10px;overflow:hidden}
+#answers img{width:100%}
+#loop{left:0;right:0;top:614px;display:flex;justify-content:center;align-items:center;gap:18px;font:600 32px Inter}
+#loop span{color:#444}#loop span.on{color:#fff}
+#loop i{font-style:normal;color:#333;font-weight:400}
+/* costs */
+#rows{left:48px;top:84px;width:1184px}
+.crow{display:grid;grid-template-columns:70px 1fr 290px 130px;align-items:center;border-bottom:1px solid #222;gap:18px}
+.crow .th{width:70px;height:40px;object-fit:cover;border:1px solid #333}
+.crow .thph{width:70px;height:40px;border:1px dashed #444}
+.crow .lb{font:600 22px Inter;display:flex;align-items:center;gap:12px}
+.crow .md{font:600 16px Inter;color:var(--g)}
+.crow .md small{display:block;font:500 12px JB;color:var(--low);margin-top:2px}
+.crow .c{font:700 24px Inter;text-align:right}
+.crow.failed .lb,.crow.failed .md,.crow.failed .c{color:var(--mid)}
+.crow .x{font:700 14px Inter;color:#000;background:var(--mid);border-radius:4px;padding:2px 6px}
+#run{right:48px;top:560px;font:600 20px Inter;color:var(--mid);text-align:right}
+#run b{font:700 26px Inter;color:#fff;margin-left:10px}
+#big{left:0;right:0;top:200px;text-align:center}
+#big .v{font:700 150px/1 Inter;letter-spacing:-.03em;color:var(--g)}
+#big .s{font:600 30px Inter;color:#fff;margin-top:22px}
+/* clip + outro */
+#clip{left:0;top:0;width:1280px;height:720px;object-fit:cover}
+#clipShade{inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.75) 100%)}
+#hookChip{left:48px;top:40px}
+#wm{left:0;right:0;top:250px;display:flex;flex-direction:column;align-items:center}
+#wm img{width:436px}
+#wm .ln{width:282px;height:3px;background:var(--g);margin-top:34px}
+#wm .u{font:500 22px Inter;letter-spacing:.14em;color:#ddd;margin-top:26px}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script src="post2_data.js"></script>
+<script>
+"use strict";
+const D = window.POST2_DATA, R = D.recipe;
+const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
+const stage = document.getElementById("stage");
+const add = (h) => { const e = $(h); stage.appendChild(e); return e; };
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const money = (v) => "$" + Number(v).toFixed(2);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
+const eout = (x) => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
+// fades centred on the beat boundary so consecutive beats cross-fade
+const win = (t, a, b, fi = .25, fo = .25) => Math.min(ease((t - (a - fi / 2)) / fi), 1 - ease((t - (b - fo / 2)) / fo));
+const set = (el, o, tf) => { el.style.opacity = o.toFixed(3); el.style.visibility = o <= 0.001 ? "hidden" : "visible"; if (tf !== undefined) el.style.transform = tf; };
+const steps = D.steps;
+const blocks = D.prompt.blocks;
+const BF = R.blocks_full;
+
+// prompt-text markup: labels / timecodes in green, "Sound:" asides dim
+const mark = (s) => esc(s)
+  .replace(/^(\[?[A-Z][A-Z ]+?\]?)( —| -|:)/gm, '<span class="k">$1</span>$2')
+  .replace(/^(\d+[–-]\d+s:)/gm, '<span class="k">$1</span>')
+  .replace(/^(- )/gm, '<span class="k">$1</span>')
+  .replace(/(Sound:[^\n]*)/g, '<span class="d">$1</span>')
+  .replace(/(CHARACTER|LOCATION|THE COFFEE WOMAN)( —|:)/g, '<span class="k">$1</span>$2');
+const chip = (s) => `<span class="chip">${esc(s)}</span>`;
+const kv = (s) => `<span class="kv">${esc(s)}</span>`;
+const metaKV = (meta) => (meta || []).filter(m => !/^capability|^job|^\$|condensed/.test(m)).map(kv).join("");
+const PAUSE = `<span class="pause">⏸ PAUSE TO READ</span>`;
+const pbox = (x, y, w, h, head, text, cols = 1) =>
+  `<div class="pbox" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">${PAUSE}<div class="ph">${esc(head)}</div>
+   <div class="txt" data-fit="1" style="column-count:${cols}">${mark(text)}</div></div>`;
+
+// ------------------------------------------------------------------ beats / timeline
+const VO = {}; ((D.vo && D.vo.lines) || []).forEach(l => VO[l.key] = l);
+const VO_LEAD = 0.05, VO_TAIL = 0.10;   // v4: continuous narration, card = line + 0.15 s
+const T = {}, voCues = [], ORDER = [];
+let t0 = 0;
+const seg = (k, voKey, fallback, minDur = 0) => {
+  ORDER.push(k);
+  const l = VO[voKey];
+  if (!l) { T[k] = [t0, t0 + Math.max(fallback, minDur)]; t0 = T[k][1]; return; }
+  voCues.push({key: l.key, t: +(t0 + VO_LEAD).toFixed(3), dur: l.dur, file: l.file});
+  T[k] = [t0, t0 + Math.max(minDur, VO_LEAD + l.dur + VO_TAIL)]; t0 = T[k][1];
+};
+seg("hook", "hook", 2.4);
+seg("s1", "s1", 3);
+seg("s2", "s2", 3);
+seg("s2b", "s2b", 3);
+seg("s3", "s3", 3);
+const BLOCK_MIN = {ASSETS: 4.0, SUMMARY: 2.6, STYLE: 3.2, PLOT: 5.5, REQUIREMENTS: 4.0};
+blocks.forEach((b, i) => seg("blk" + i, "b_" + b.tag, 3));
+seg("s4", "s4", 3);
+seg("s5", "s5", 3);
+seg("approval", "s6", 2.4);
+seg("answers", "answers", 1.6);
+seg("costs", "costs", 3.5);
+const ROW_DT = Math.min(0.4, (T.costs[1] - T.costs[0] - 0.6) / Math.max(1, steps.length));
+seg("total", "total", 2.4);
+seg("outro", "outro", 3.0);
+const DURATION = +t0.toFixed(3);
+const cues = [];
+ORDER.slice(1).forEach(k => cues.push({t: T[k][0], kind: "whoosh"}));
+steps.forEach((s, i) => cues.push({t: T.costs[0] + 0.25 + i * ROW_DT, kind: s.status === "failed" || s.status === "notcharged" ? "tickLow" : "tick"}));
+cues.push({t: T.total[0] + 0.9, kind: "thump"});
+window.TIMELINE = {duration: DURATION, fps: 30, segments: T, cues, vo: voCues,
+  clip: [{at: T.hook[0], from: D.clip.hook_start_s, dur: T.hook[1] - T.hook[0]},
+         {at: T.outro[0], from: D.clip.outro_start_s, dur: T.outro[1] - T.outro[0]}]};
+
+// ------------------------------------------------------------------ static chrome
+const clipImg = add(`<img class="L" id="clip">`);
+const clipShade = add(`<div class="L" id="clipShade"></div>`);
+const hookChip = add(`<div class="L" id="hookChip"><span class="chip solid" style="font-size:17px;padding:5px 14px">The full recipe · ${money(D.total_usd)}</span></div>`);
+const STEP_TABS = ["Location", "Character", "Prompt", "Render", "Sound", "Approval", "Cost"];
+const hdr = add(`<div class="L" id="hdr"><div class="t">THE RECIPE</div><div class="steps">${STEP_TABS.map((s, i) => `<span><b>${i + 1}</b>${s}</span>`).join("")}</div></div>`);
+const hdrSteps = [...hdr.querySelectorAll(".steps span")];
+const STEP_OF = {s1: 0, s2: 1, s2b: 1, s3: 2, s4: 3, s5: 4, approval: 5, answers: 5, costs: 6, total: 6};
+blocks.forEach((b, i) => STEP_OF["blk" + i] = 2);
+const cap = add(`<div class="L" id="cap"></div>`);
+const badge = add(`<img class="L" id="badge" src="${D.assets.badge}">`);
+const CAPS = {hook: "One AI shot. Here's the full recipe.", s3: "The video prompt: five blocks.",
+  s4: "The exact render call.", s5: "15 sound effects + 1 foley bed.", costs: "Every model call, and what it cost."};
+
+const cardTop = (no, title, right) => `<div class="top"><span class="no">STEP ${no}</span><span class="ti">${esc(title)}</span>${right}</div>`;
+// title row + cost on the right, settings chips on their own row
+const cardTop2 = (no, title, cost, chips) => `<div class="top"><span class="no">STEP ${no}</span><span class="ti">${esc(title)}</span><span class="sp"></span><span class="cost">${cost}</span></div>
+  <div style="display:flex;gap:8px;flex-wrap:nowrap;margin-top:2px">${chips}</div>`;
+const cards = {};
+
+// STEP 1 · location
+{
+  const L = R.location, F = R.location_fix;
+  cards.s1 = add(`<div class="L card">${cardTop2(1, "Location sheet", "$0.23 + $0.23", chip("gpt-image-edit · GPT Image 2") + metaKV(L.meta))}
+    <div style="position:absolute;left:0;top:92px;width:250px">
+      <div class="frame" style="width:250px;height:150px"><img src="${D.assets.photo_env}"></div><div class="lbl">Input: street photo (brands blurred here)</div>
+      <div class="arrowD" style="margin:4px auto"></div>
+      <div class="frame" style="width:250px;height:167px"><img src="${D.assets.envsheet}"></div><div class="lbl">Output: 5-panel location sheet</div>
+      <div style="font:500 13px/1.45 Inter;color:#bdbdbd;margin-top:10px"><span class="g">Then a text-fix edit</span> on the sheet ($0.23): swap leftover real-looking lettering for invented words. Keep everything else.</div>
+    </div>
+    ${pbox(276, 92, 908, 472, "PROMPT 1 · key lines · gpt-image-edit · source_url = the street photo", (R.location_screen || L).text, 2)}</div>`);
+}
+// STEP 2 · character sheet from text
+{
+  const C = R.character;
+  cards.s2 = add(`<div class="L card">${cardTop2(2, "Character sheet, from text", "$0.23", chip("gpt-image-edit · GPT Image 2") + metaKV(C.meta))}
+    <div style="position:absolute;left:0;top:92px;width:250px">
+      <div class="frame" style="width:250px;height:167px"><img src="${D.assets.charsheet}"></div><div class="lbl">Output: 4-view character sheet</div>
+      <div class="frame" style="width:250px;height:120px;margin-top:18px;opacity:.8"><img src="${D.assets.envsheet}"></div><div class="lbl">source_url: the location sheet (place + light only)</div>
+    </div>
+    ${pbox(276, 92, 908, 472, "PROMPT · the woman is designed from words, not from a photo", C.text, 2)}</div>`);
+}
+// STEP 2b · single street photo
+{
+  const P = R.single;
+  cards.s2b = add(`<div class="L card">${cardTop2(2, "One street photo of her", "$0.08", chip("nano-banana · Nano Banana") + metaKV(P.meta))}
+    <div style="position:absolute;left:0;top:92px;width:420px">
+      <div class="frame" style="width:420px;height:235px"><img src="${D.assets.char_single}"></div><div class="lbl">Output: a single 16:9 photo</div>
+      <div class="frame" style="width:260px;height:173px;margin-top:22px;opacity:.8"><img src="${D.assets.charsheet}"></div><div class="lbl">source_url: the character sheet</div>
+    </div>
+    ${pbox(446, 92, 738, 330, "PROMPT · nano-banana", P.text, 1)}
+    <div style="position:absolute;left:446px;top:442px;width:738px;font:600 19px/1.45 Inter;color:#cfcfcf">
+      These three images are the design. The prompt's <span class="g">CHARACTER</span> and <span class="g">LOCATION</span> text is written from them.</div></div>`);
+}
+// STEP 3 · prompt overview
+const BLOCK_ROLE = {ASSETS: "who and where, in words", SUMMARY: "the story in one breath", STYLE: "camera, lens, light, grade",
+  PLOT: "second by second, with sound", REQUIREMENTS: "hard rules; every defect adds one"};
+cards.s3 = add(`<div class="L card">${cardTop(3, "The video prompt", chip("seedance-25-t2v · Seedance 2.5") + kv("text only · 5 blocks · " + (D.prompt.source || "").split("/").pop()))}
+  <div style="position:absolute;left:0;top:78px;width:760px">${blocks.map((b, i) => `<div style="display:flex;align-items:baseline;gap:16px;border-top:1px solid #2a2a2a;padding:13px 0">
+    <span style="font:700 26px JB;color:var(--g);width:30px">${i + 1}</span><span style="font:700 28px Inter;width:250px">[${esc(b.tag)}]</span>
+    <span style="font:500 21px Inter;color:#bdbdbd">${esc(BLOCK_ROLE[b.tag] || b.name)}</span></div>`).join("")}</div>
+  <div style="position:absolute;left:800px;top:84px;width:384px">
+    <div style="display:flex;gap:10px">${[D.assets.envsheet, D.assets.charsheet, D.assets.char_single].map(s => `<div class="frame" style="width:121px;height:80px"><img src="${s}"></div>`).join("")}</div>
+    <div class="arrowD" style="margin:14px auto"></div>
+    <div style="font:600 19px/1.45 Inter;color:#cfcfcf;text-align:center">The designs, described in words in block 1. The video model reads text only.</div></div></div>`);
+// STEP 3 · one card per block, full text
+const blockCards = blocks.map((b, i) => {
+  const txt = BF[b.tag] || "";
+  const cols = txt.length > 1500 ? 3 : txt.length > 520 ? 2 : 1;
+  const tabs = `<span class="tabs">${blocks.map((x, j) => `<span class="${j === i ? "on" : ""}">${esc(x.tag)}</span>`).join("")}</span>`;
+  return add(`<div class="L card">${cardTop(3, `Block ${i + 1} · [${b.tag}]`, `<span style="font:500 18px Inter;color:#aaa">${esc(BLOCK_ROLE[b.tag] || "")}</span><span class="sp"></span>` + tabs)}
+    ${pbox(0, 60, 1184, cols === 1 ? 300 : 504, `PROMPT TEXT · verbatim · block ${i + 1} of 5`, txt, cols)}</div>`);
+});
+// STEP 4 · render call
+{
+  const X = R.render || {};
+  const code = `<span class="k">run_capability</span>({
+  capability: <span class="s">"${esc(X.capability || "seedance-25-t2v")}"</span>,
+  prompt:     <span class="d">/* the 5 blocks, as one text */</span>,
+  inputs: {
+    duration:       <span class="s">"15"</span>,
+    resolution:     <span class="s">"720p"</span>,
+    aspect_ratio:   <span class="s">"16:9"</span>,
+    generate_audio: <span class="s">true</span>
+  },
+  async: <span class="s">true</span>   <span class="d">// then poll get_create_media</span>
+})`;
+  cards.s4 = add(`<div class="L card">${cardTop(4, "Render", chip("seedance-25-t2v · Seedance 2.5 · via the Livepeer MCP") + `<span class="sp"></span><span class="cost">${money(X.cost || 0)}</span>`)}
+    <div class="code">${code}</div>
+    <div style="position:absolute;left:800px;top:70px;width:384px">
+      <div class="frame" style="width:384px;height:216px"><img id="s4thumb" src="${(steps.find(s => s.key === "final") || {}).thumb || D.assets.char_single}"></div>
+      <div style="font:700 30px Inter;margin-top:22px">${esc(X.time || "")}</div>
+      <div style="font:600 19px/1.5 Inter;color:#bdbdbd;margin-top:8px">One continuous 15-second take, 1280×720, native audio.</div></div></div>`);
+}
+// STEP 5 · sound design
+{
+  const Sd = R.sound || {oneshots: [], timeline: []};
+  const list = Sd.oneshots.map(o => `<div class="${o.used ? "" : "un"}">${esc(o.text)} <i>${esc(o.dur)}s${o.used ? "" : " · unused"}</i></div>`).join("");
+  const X = (t) => (t / 15 * 100).toFixed(2) + "%";
+  const marks = Sd.timeline.map((m, j) => m.t2
+    ? `<div class="frz" style="left:${X(m.t)};width:calc(${X(m.t2)} - ${X(m.t)})"></div><div class="ml" style="left:calc(${X(m.t)} + (${X(m.t2)} - ${X(m.t)})/2);top:${m.label.length > 10 ? 0 : 0}px;color:var(--g)">${esc(m.label)}</div>`
+    : `<div class="m" style="left:${X(m.t)}"></div><div class="ml" style="left:${X(m.t)};top:${j % 2 ? 84 : 94}px">${esc(m.label)}</div><div class="ts" style="left:${X(m.t)};top:${j % 2 ? 104 : 114}px">${m.t.toFixed(2)}s</div>`).join("");
+  cards.s5 = add(`<div class="L card">${cardTop(5, "Sound design", chip("mirelo-sfx · text-to-audio") + chip("mirelo-sfx-v2v · foley bed") + `<span class="sp"></span><span class="cost">${money(Sd.cost || 0)}</span>`)}
+    <div style="position:absolute;left:0;top:52px;font:600 13px Inter;letter-spacing:.14em;color:var(--mid)">15 ONE-SHOTS · mirelo-sfx · what each prompt asked for · duration</div>
+    <div class="sfx" style="top:76px">${list}</div>
+    <div style="position:absolute;left:740px;top:76px;width:444px;font:500 17px/1.55 Inter;color:#dcdcdc">
+      <div style="font:600 13px Inter;letter-spacing:.14em;color:var(--mid);margin-bottom:6px">FOLEY BED</div>
+      <div><span class="g" style="font-family:JB">mirelo-sfx-v2v</span> · ${esc(Sd.v2v ? Sd.v2v.text : "")} · ${esc(Sd.v2v ? Sd.v2v.dur : "15")}s</div>
+      <div style="font:600 13px Inter;letter-spacing:.14em;color:var(--mid);margin:16px 0 6px">MIX</div>
+      <div style="font-family:JB;font-size:15px">${esc(Sd.mix || "")}</div></div>
+    <div class="tl" style="top:330px"><div class="bar"></div>${marks}
+      <div class="ts" style="left:0;top:56px;transform:none">0s</div><div class="ts" style="left:100%;top:56px;transform:translateX(-100%)">15s</div></div></div>`);
+}
+// fit every prompt box: largest font (<= 19px) whose text fits without clipping
+function fitAll() {
+  document.querySelectorAll('[data-fit="1"]').forEach(el => {
+    const card = el.closest(".card"); const vis = card.style.visibility; card.style.visibility = "visible";
+    let fs = 19;
+    for (; fs > 9; fs -= 0.5) {
+      el.style.fontSize = fs + "px";
+      if (el.scrollHeight <= el.clientHeight + 1 && el.scrollWidth <= el.clientWidth + 1) break;
+    }
+    el.dataset.fs = fs;
+    card.style.visibility = vis;
+  });
+}
+// approval
+const A = D.approval, AM = A.meta || {};
+const browser = add(`<div class="L" id="browser"><div class="bar"><i></i><i></i><i></i><span>freeze-frame-signoff.html · built by the AI for the human</span></div><div class="vp"><img src="${A.full}"></div></div>`);
+const bImg = browser.querySelector(".vp img");
+const CHECKS = AM.sections || [];
+const checks = add(`<div class="L" id="checks"><div id="chkHead">STEP 6 · THE HUMAN APPROVED</div>${CHECKS.map(c => `<div class="ck"><div class="box">✓</div>${esc(c.label)}</div>`).join("")}</div>`);
+const ckEls = [...checks.querySelectorAll(".ck")];
+const answers = add(`<div class="L" id="answers"><div class="ttl">PASTED BACK INTO THE AI'S TERMINAL</div><div class="wrap"><img src="${A.answers}"></div></div>`);
+const ansWrap = answers.querySelector(".wrap");
+const loop = add(`<div class="L" id="loop">${D.text.loop.map((w, i) => `${i ? "<i>→</i>" : ""}<span>${esc(w)}</span>`).join("")}</div>`);
+const loopEls = [...loop.querySelectorAll("span")];
+// costs
+const rows = add(`<div class="L" id="rows"></div>`);
+const ROW_H = Math.min(54, Math.floor(460 / Math.max(1, steps.length)));
+const rowEls = steps.map(s => {
+  const th = s.thumb ? `<img class="th" src="${s.thumb}">` : `<div class="thph"></div>`;
+  const bad = s.status === "failed" || s.status === "notcharged";
+  const e = $(`<div class="crow ${bad ? "failed" : ""}" style="height:${ROW_H}px">${th}
+    <div class="lb">${bad ? '<span class="x">✕</span>' : ""}${esc(s.label)}</div>
+    <div class="md">${esc(s.model)}<small>${esc(s.capability)}</small></div>
+    <div class="c">${money(s.cost_usd)}</div></div>`);
+  rows.appendChild(e); return e;
+});
+const run = add(`<div class="L" id="run">Running total<b>$0.00</b></div>`);
+const runB = run.querySelector("b");
+const big = add(`<div class="L" id="big"><div class="v">$0.00</div><div class="s">${esc(D.text.total_sub.replace("{n}", D.n_calls))}</div></div>`);
+const bigV = big.querySelector(".v");
+const wm = add(`<div class="L" id="wm"><img src="${D.assets.wordmark}"><div class="ln"></div><div class="u">${esc(D.text.outro_url)}</div></div>`);
+const wmLn = wm.querySelector(".ln");
+
+// ------------------------------------------------------------------ render
+let lastClipSrc = null;
+function clipFrameAt(t) {
+  for (const c of window.TIMELINE.clip) {
+    if (t >= c.at - 0.3 && t < c.at + c.dur + 0.05) {
+      const ct = clamp(c.from + (t - c.at), 0, D.clip.duration_s - 1 / 30);
+      const n = Math.min(D.clip.n_frames || 450, Math.max(1, Math.floor(ct * D.clip.fps) + 1));
+      return `${D.clip.frames_dir}/${String(n).padStart(4, "0")}.jpg`;
+    }
+  }
+  return null;
+}
+const segAt = (t) => ORDER.find(k => t >= T[k][0] && t < T[k][1]) || ORDER[ORDER.length - 1];
+let capCur = null;
+function render(t) {
+  const H = T.hook, O = T.outro, k = segAt(t);
+  const src = clipFrameAt(t);
+  let decode = Promise.resolve();
+  if (src && src !== lastClipSrc) { clipImg.src = src; lastClipSrc = src; decode = clipImg.decode().catch(() => {}); }
+  const clipO = Math.max(win(t, H[0] - 1, H[1], .01, .3), win(t, O[0], O[1] + 1, .35, .01));
+  const outroDim = t >= O[0] ? 1 - 0.62 * ease((t - O[0] - .2) / .6) : 1;
+  set(clipImg, clipO * outroDim, `scale(${t < O[0] ? 1 + 0.03 * (t - H[0]) / 2.4 : 1.04 - 0.02 * (t - O[0]) / 3})`);
+  set(clipShade, clipO * (t < O[0] ? 1 : 0));
+  set(hookChip, win(t, H[0] + 0.6, H[1], .3, .25));
+  set(hdr, win(t, T.s1[0], T.total[1], .3, .3));
+  const si = STEP_OF[k] ?? -1;
+  hdrSteps.forEach((s, i) => s.style.color = i === si ? "#00EC9B" : "#444");
+  set(badge, t < O[0] ? 1 : 1 - ease((t - O[0]) / .3));
+  const ct = CAPS[k] || "";
+  if (ct !== capCur) { capCur = ct; cap.textContent = ct; }
+  set(cap, ct ? win(t, T[k][0], T[k][1], .2, .2) : 0, `translateY(${(1 - eout((t - T[k][0]) / .3)) * 8}px)`);
+
+  // cards
+  const showCard = (el, key) => set(el, win(t, T[key][0], T[key][1], .3, .3), `translateY(${(1 - eout((t - T[key][0]) / .35)) * 12}px)`);
+  ["s1", "s2", "s2b", "s3", "s4", "s5"].forEach(key => showCard(cards[key], key));
+  blockCards.forEach((el, i) => showCard(el, "blk" + i));
+  // s5 timeline markers grow in
+  cards.s5.querySelectorAll(".m, .frz").forEach((m, j) => m.style.opacity = ease((t - T.s5[0] - .3 - .15 * j) / .25).toFixed(3));
+
+  // approval
+  const AP = T.approval, AN = T.answers;
+  set(browser, win(t, AP[0], AP[1], .3, .3));
+  const vpH = 472, sc = 852 / (AM.width || 1280), fullH = (AM.height || 3000) * sc;
+  const y = ease((t - AP[0] - .25) / (AP[1] - AP[0] - .4)) * Math.max(0, fullH - vpH);
+  bImg.style.transform = `translateY(${-y}px)`;
+  set(checks, win(t, AP[0] + .1, AP[1], .3, .3));
+  ckEls.forEach((c, i) => c.classList.toggle("on", y + vpH * 0.55 >= CHECKS[i].y * sc));
+  set(answers, win(t, AN[0], AN[1], .3, .3), `translateY(${(1 - eout((t - AN[0]) / .4)) * 16}px)`);
+  ansWrap.style.clipPath = `inset(0 0 ${((1 - eout((t - AN[0] - .1) / .7)) * 100).toFixed(1)}% 0)`;
+  set(loop, win(t, AP[0], AN[1], .3, .3));
+  const li = t < AP[0] + .4 ? 0 : t < AN[0] + .2 ? 1 : 2;
+  loopEls.forEach((e, i) => e.classList.toggle("on", i === li));
+
+  // costs + total
+  const C = T.costs, TT = T.total;
+  set(rows, win(t, C[0], TT[1], .3, .3), `translateY(${-ease((t - TT[0]) / .5) * 30}px)`);
+  let runV = 0, newest = -1;
+  rowEls.forEach((e, i) => {
+    const ta = C[0] + .25 + i * ROW_DT;
+    if (t >= ta) { runV += steps[i].cost_usd; newest = i; }
+    e.style.opacity = ease((t - ta) / .2).toFixed(3);
+    e.style.transform = `translateY(${(1 - eout((t - ta) / .3)) * 10}px)`;
+  });
+  rowEls.forEach((e, i) => {
+    if (i < newest && t < C[1]) e.style.opacity = (parseFloat(e.style.opacity) * 0.6).toFixed(3);
+    if (t >= TT[0]) e.style.opacity = (0.3 * (1 - ease((t - TT[0]) / .4)) + 0.05).toFixed(3);
+  });
+  runB.textContent = money(runV);
+  set(run, win(t, C[0] + .4, C[1], .3, .25));
+  set(big, win(t, TT[0] + .15, TT[1], .3, .3), `scale(${0.96 + 0.04 * eout((t - TT[0]) / .5)})`);
+  bigV.textContent = money(D.total_usd * eout((t - TT[0] - .1) / .8));
+
+  // outro
+  set(wm, win(t, O[0] + .35, O[1] + 1, .45, .01), `translateY(${(1 - eout((t - O[0] - .35) / .6)) * 10}px)`);
+  wmLn.style.width = (282 * eout((t - O[0] - .6) / .6)) + "px";
+  return decode;
+}
+window.render = render;
+window.READY = (async () => {
+  await document.fonts.ready;
+  await Promise.all([...document.images].map(i => i.complete ? null : new Promise(r => { i.onload = i.onerror = r; })));
+  fitAll();
+  render(0);
+  return true;
+})();
+</script>
+</body>
+</html>

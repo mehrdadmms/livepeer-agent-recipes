@@ -1,0 +1,21 @@
+{
+  "width": 1280,
+  "height": 1522,
+  "crop_top": 1689,
+  "sections": [
+    {
+      "label": "Plan",
+      "y": 24
+    },
+    {
+      "label": "Budget",
+      "y": 262
+    },
+    {
+      "label": "5 decisions",
+      "y": 648
+    }
+  ],
+  "answers_text": "SIGN-OFF\nCharacter sheet: APPROVE\nEnvironment sheet: APPROVE\nSpend cap: raise to $120\nCoffee woman: generate a locked still (+$0.08)\nPost 1 ending: fade out\nFailed renders on slide: show as own line\nDraft in Post 2: final only\nPlan + budget ($35 hard stop): approved",
+  "scroll_frames": 75
+}

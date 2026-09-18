@@ -1,0 +1,632 @@
+{
+  "generated_at": "2026-09-18T16:23:41+00:00",
+  "dryrun": false,
+  "ledgers": [
+    "../ledger/cost_log_post1.jsonl",
+    "../ledger/cost_log_sheets.jsonl"
+  ],
+  "total_usd": 13.19,
+  "total_placeholder": false,
+  "n_calls": 110,
+  "reconciliation": {
+    "ledger_net_usd": 13.1852,
+    "rows_sum_usd": 13.19,
+    "released_reservations_usd": 19.721,
+    "per_ledger": {
+      "../ledger/cost_log_post1.jsonl": 12.4952,
+      "../ledger/cost_log_sheets.jsonl": 0.69
+    },
+    "ledger_total_lines": [
+      {
+        "ledger": "../ledger/cost_log_sheets.jsonl",
+        "cost_usd": 0.69,
+        "note": "TOTAL (get_cost_report scope=session session_id=sheets-freeze-nyc)",
+        "line_items_usd": 0.69,
+        "match": true
+      }
+    ],
+    "sessions": [
+      "post1-freeze-ae42c851-10af-46ca-abd3-c68ab52bef9b",
+      "sheets-freeze-nyc"
+    ],
+    "note": "On screen = ledger net cost_usd. Compare with get_cost_report(scope=session) for SESSIONS; that report shows gross (released moderation holds not netted)."
+  },
+  "total_spoken": "thirteen dollars and nineteen cents",
+  "vo": {
+    "voice": "Dennis (en)",
+    "capability": "inworld-tts",
+    "gap": 0.2,
+    "lines": [
+      {
+        "key": "hook",
+        "text": "One AI shot. Here's the full recipe.",
+        "file": "vo/proc/hook.wav",
+        "dur": 2.318
+      },
+      {
+        "key": "s1",
+        "text": "Step one: GPT Image 2 turns a street photo into a five-panel location sheet.",
+        "file": "vo/proc/s1.wav",
+        "dur": 4.613
+      },
+      {
+        "key": "s2",
+        "text": "Step two: the character, designed from text. Late twenties, ash-blonde shag, black leather jacket, combat boots.",
+        "file": "vo/proc/s2.wav",
+        "dur": 6.084
+      },
+      {
+        "key": "s2b",
+        "text": "Then Nano Banana makes one street photo of her, walking at camera.",
+        "file": "vo/proc/s2b.wav",
+        "dur": 3.867
+      },
+      {
+        "key": "s3",
+        "text": "Step three: the video prompt. Five blocks.",
+        "file": "vo/proc/s3.wav",
+        "dur": 2.427
+      },
+      {
+        "key": "b_ASSETS",
+        "text": "Block one: assets. The woman, the street and the coffee stranger, all in words.",
+        "file": "vo/proc/b_ASSETS.wav",
+        "dur": 4.064
+      },
+      {
+        "key": "b_SUMMARY",
+        "text": "Block two: the story, in one breath.",
+        "file": "vo/proc/b_SUMMARY.wav",
+        "dur": 2.093
+      },
+      {
+        "key": "b_STYLE",
+        "text": "Block three: one unbroken take, forty mil lens, shallow focus, sodium and neon light, film grain.",
+        "file": "vo/proc/b_STYLE.wav",
+        "dur": 5.46
+      },
+      {
+        "key": "b_PLOT",
+        "text": "Block four, second by second: she walks at camera. At four, the snap, the city freezes. Nine, the sip. Twelve, the second snap. Then fade out.",
+        "file": "vo/proc/b_PLOT.wav",
+        "dur": 7.488
+      },
+      {
+        "key": "b_REQUIREMENTS",
+        "text": "Block five: hard rules. Every mistake adds one.",
+        "file": "vo/proc/b_REQUIREMENTS.wav",
+        "dur": 3.044
+      },
+      {
+        "key": "s4",
+        "text": "Step four: Seedance two point five. Fifteen seconds, seven-twenty p, sixteen by nine, audio on.",
+        "file": "vo/proc/s4.wav",
+        "dur": 5.993
+      },
+      {
+        "key": "s5",
+        "text": "Step five: sound. Mirelo makes the snap, the boom, pigeons and the sip, plus a foley bed. Then ffmpeg mixes it.",
+        "file": "vo/proc/s5.wav",
+        "dur": 6.454
+      },
+      {
+        "key": "s6",
+        "text": "Step six: AI plans. A human approves.",
+        "file": "vo/proc/s6.wav",
+        "dur": 2.53
+      },
+      {
+        "key": "answers",
+        "text": "Then the AI executes.",
+        "file": "vo/proc/answers.wav",
+        "dur": 1.348
+      },
+      {
+        "key": "costs",
+        "text": "Step seven: every call, every cent.",
+        "file": "vo/proc/costs.wav",
+        "dur": 2.009
+      },
+      {
+        "key": "outro",
+        "text": "Pause it. Copy it. Make your own.",
+        "file": "vo/proc/outro.wav",
+        "dur": 1.671
+      },
+      {
+        "key": "total",
+        "text": "Total: thirteen dollars and nineteen cents.",
+        "file": "vo/proc/total.wav",
+        "dur": 2.247
+      }
+    ]
+  },
+  "steps": [
+    {
+      "key": "location",
+      "label": "Location sheet (draft + text fix)",
+      "model": "GPT Image 2",
+      "capability": "gpt-image-edit",
+      "cost_usd": 0.46,
+      "n_calls": 2,
+      "thumb": "../refs/envsheet_v1.jpg",
+      "status": "ok",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 0.46
+    },
+    {
+      "key": "character",
+      "label": "Character sheet, from text",
+      "model": "GPT Image 2",
+      "capability": "gpt-image-edit",
+      "cost_usd": 0.23,
+      "n_calls": 1,
+      "thumb": "../refs/charsheet_v3.jpg",
+      "status": "ok",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 0.23
+    },
+    {
+      "key": "char_photo",
+      "label": "Character street photo",
+      "model": "Nano Banana",
+      "capability": "nano-banana",
+      "cost_usd": 0.08,
+      "n_calls": 1,
+      "thumb": "../refs/char_v3_single.jpg",
+      "status": "ok",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 0.084
+    },
+    {
+      "key": "early",
+      "label": "Early tests (unused character + scene stills)",
+      "model": "Mixed image models",
+      "capability": "gpt-image-edit · nano-banana · kontext-edit",
+      "cost_usd": 2.23,
+      "n_calls": 31,
+      "thumb": null,
+      "status": "early",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 2.224
+    },
+    {
+      "key": "probes",
+      "label": "Seedance test clips",
+      "model": "Seedance 2.5",
+      "capability": "seedance-25-ref2v",
+      "cost_usd": 1.85,
+      "n_calls": 2,
+      "thumb": "assets/thumbs/probes.jpg",
+      "status": "ok",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 1.8522
+    },
+    {
+      "key": "final",
+      "label": "Final 15s render · 720p",
+      "model": "Seedance 2.5",
+      "capability": "seedance-25-t2v",
+      "cost_usd": 7.45,
+      "n_calls": 1,
+      "thumb": "assets/thumbs/final.jpg",
+      "status": "ok",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 7.4498
+    },
+    {
+      "key": "sound",
+      "label": "Sound effects",
+      "model": "Mirelo SFX",
+      "capability": "mirelo-sfx · mirelo-sfx-v2v",
+      "cost_usd": 0.86,
+      "n_calls": 16,
+      "thumb": null,
+      "status": "ok",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 0.861
+    },
+    {
+      "key": "narration",
+      "label": "Narration voice",
+      "model": "Inworld TTS",
+      "capability": "inworld-tts",
+      "cost_usd": 0.03,
+      "n_calls": 50,
+      "thumb": null,
+      "status": "ok",
+      "placeholder": false,
+      "reserved_usd": 0.0,
+      "exact_usd": 0.0242
+    },
+    {
+      "key": "notcharged",
+      "label": "Failed attempts (not charged)",
+      "model": "6 runs",
+      "capability": "seedance-25-*",
+      "cost_usd": 0.0,
+      "n_calls": 6,
+      "thumb": null,
+      "status": "notcharged",
+      "placeholder": false,
+      "reserved_usd": 19.721,
+      "exact_usd": 0.0
+    }
+  ],
+  "assets": {
+    "photo_env": "../refs/envsheet_v1.jpg",
+    "charsheet": "../refs/charsheet_v3.jpg",
+    "char_single": "../refs/char_v3_single.jpg",
+    "envsheet": "../refs/envsheet_v1.jpg",
+    "wordmark": "assets/brand/livepeer_wordmark.png",
+    "badge": "assets/brand/badge.png"
+  },
+  "character_text": "Late-twenties woman, lean, choppy ash-blonde shag cut at chin length with a heavy fringe, light olive skin, dark straight eyebrows, a small silver hoop earring, a calm and unreadable face. Black leather biker jacket with silver zips and snaps, charcoal crew-neck tee, black leather belt with a brass buckle, dark straight-leg jeans, black lace-up combat boots.",
+  "recipe": {
+    "location": {
+      "meta": [
+        "capability: gpt-image-edit (GPT Image 2)",
+        "source_url: images/2.jpg (street photo)",
+        "image_size 1536x1024, quality high",
+        "$0.23",
+        "job mjob_89ad51119804"
+      ],
+      "text": "Using this real Times Square photo as the layout reference, create a photorealistic ENVIRONMENT REFERENCE SHEET of a DYSTOPIAN 1980s New York Times Square. Landscape sheet, clean grid of 5 photographic panels separated by thin white gutters, all panels same time of day (smoggy dusk), same palette (sodium-orange streetlight, sickly yellow-green haze in the sky, flickering magenta/cyan neon), same 35mm film grain look (Kodak film, slight halation).\nPanel 1 (large, top-left, the main panel): wide establishing shot matching the reference photo's camera angle and layout: the tall white grid office tower on the left, stacked rooftop billboards on the left, the red-brick building with a rooftop water tank and steel sign scaffold in the center, the wide avenue receding to a vanishing point, theatre marquees and giant billboards on the right, the red ticket booth structure lower left. Make it decaying and oppressive: grime-streaked facades, torn and peeling billboards, some neon tubes broken or flickering, graffiti, steam plumes rising from street grates, garbage bags and litter on the sidewalks, smog haze, surveillance cameras and loudspeakers on poles.\nPanel 2: street-level eye-level view standing on the sidewalk looking straight down the avenue (the camera angle for a walking shot): busy sidewalk with pedestrians in 1980s clothing, payphones, newspaper boxes, trash cans, steam from a grate, yellow period taxis and boxy 1980s sedans on the avenue, marquees and billboards overhead.\nPanel 3: reverse angle looking back up the avenue from the other direction, same dystopian styling, crowds and traffic.\nPanel 4 (detail): close-up of a flickering neon propaganda-style billboard and theatre marquee.\nPanel 5 (detail): sidewalk and storefront texture: cracked pavement, wet grime, cigarette butts, torn posters, a steaming grate, shuttered storefront with graffiti.\nCRITICAL: remove every real brand, product and show name from the reference. No [real brands in the photo] or any real trademark. Replace all signage with invented fictional brands and oppressive propaganda slogans, e.g. \"NOVA COLA\", \"KAITO ELECTRONICS\", \"OBEY. CONSUME. REPEAT.\", \"MINISTRY OF ORDER\", \"VOLT CIGARETTES\", \"THE IRON CROWN - NOW PLAYING\", \"CURFEW 10PM\". Keep sign text short, bold and clean. Photoreal, not illustrated, no character sheet figures; ambient crowd only.",
+      "file": "../prompts/envsheet_prompt.txt"
+    },
+    "location_screen": {
+      "meta": [
+        "key lines of envsheet_prompt.txt ([…] = cut for the screen; full text in the file)"
+      ],
+      "text": "Using this real Times Square photo as the layout reference, create a photorealistic ENVIRONMENT REFERENCE SHEET of a DYSTOPIAN 1980s New York Times Square. Landscape sheet, clean grid of 5 photographic panels separated by thin white gutters, all panels same time of day (smoggy dusk), same palette (sodium-orange streetlight, sickly yellow-green haze in the sky, flickering magenta/cyan neon), same 35mm film grain look (Kodak film, slight halation).\nPanel 1 (large, top-left, the main panel): wide establishing shot matching the reference photo's camera angle and layout […]. Make it decaying and oppressive: grime-streaked facades, torn and peeling billboards, some neon tubes broken or flickering, graffiti, steam plumes rising from street grates, garbage bags and litter on the sidewalks, smog haze, surveillance cameras and loudspeakers on poles.\nPanel 2: street-level eye-level view standing on the sidewalk looking straight down the avenue (the camera angle for a walking shot) […].\nPanel 3: reverse angle […]. Panel 4 (detail): close-up of a flickering neon propaganda-style billboard and theatre marquee. Panel 5 (detail): sidewalk and storefront texture […].\nCRITICAL: remove every real brand, product and show name from the reference. […] Replace all signage with invented fictional brands and oppressive propaganda slogans, e.g. \"NOVA COLA\", \"KAITO ELECTRONICS\", \"OBEY. CONSUME. REPEAT.\", \"MINISTRY OF ORDER\", \"VOLT CIGARETTES\", \"THE IRON CROWN - NOW PLAYING\", \"CURFEW 10PM\". Keep sign text short, bold and clean. Photoreal, not illustrated, no character sheet figures; ambient crowd only.",
+      "file": "../prompts/envsheet_prompt_onscreen.txt"
+    },
+    "location_fix": {
+      "meta": [
+        "capability: gpt-image-edit (GPT Image 2)",
+        "source_url: the sheet above",
+        "image_size 1536x1024, quality high",
+        "$0.23",
+        "job mjob_31e36850ddf6",
+        "condensed from the job record"
+      ],
+      "text": "Edit this environment reference sheet. Keep EVERYTHING identical: same 5-panel layout, composition, lighting, palette, grain and all the existing fictional signs. Only change these text elements: replace leftover real-looking lettering with invented words (booth: \"RATION RATION RATION\"; marquee: \"PARAGON 1\"; news box: \"THE DAILY ORDER\"); make any other garbled or real-looking brand text illegible or fictional. Do not add new objects, do not change the aspect ratio, photoreal.",
+      "file": "../prompts/envsheet_fix_prompt.txt"
+    },
+    "character": {
+      "meta": [
+        "capability: gpt-image-edit (GPT Image 2)",
+        "source_url: envsheet_v1.png (location/light ref only)",
+        "image_size auto, quality high",
+        "$0.23"
+      ],
+      "text": "Use this image ONLY as the location and colour/lighting reference (smoggy dystopian early-1980s Times Square at dusk, wet pavement, sodium and neon light, 35mm film grain). Create a NEW image: an on-location costume-continuity reference of ONE original fictional young woman, photographed on this same sidewalk. Layout: four full-length panels side by side in one landscape frame, each showing her head to boots at the same scale: (1) walking toward camera, front view, (2) three-quarter view mid-stride, (3) side profile standing, (4) back view walking away. Same street background in every panel. Documentary street-photography style, ultra-photoreal, natural skin texture, candid, not posed like a studio headshot, no close-ups, no portrait crops.\nHer design (invented, not based on any real person): late 20s, lean athletic build, ash-blonde hair cut in a choppy shaggy chin-length 1980s cut with a heavy fringe, light olive skin, dark straight eyebrows, a small silver hoop in one ear.\nOutfit identical in all four panels, no logos: distressed black leather biker jacket with silver zips, charcoal crew-neck t-shirt, thin black belt, dark indigo straight-leg jeans, scuffed black lace-up combat boots.\nBackground pedestrians are blurred and secondary. No text, no labels, no real brands, no legible signage except the invented OBEY. CONSUME. REPEAT. billboard if visible.",
+      "file": "../prompts/charsheet_v3_prompt.txt"
+    },
+    "single": {
+      "meta": [
+        "capability: nano-banana",
+        "source_url: charsheet_v3.png",
+        "aspect_ratio 16:9",
+        "$0.084"
+      ],
+      "text": "Create ONE single photograph (not a multi-panel sheet): the exact same woman from the first panel of this image, identical face, choppy ash-blonde shag haircut with fringe, silver hoop earring, black leather biker jacket, charcoal t-shirt, belt, dark jeans, black combat boots. She walks toward the camera, full length head to boots, centered, on the same wet dystopian 1980s Times Square sidewalk at dusk with the pink OBEY. CONSUME. REPEAT. billboard behind, blurred 1980s pedestrians, steam from a grate. Landscape 16:9 frame. Ultra-photoreal 35mm street photography, natural skin texture, film grain. No other text.",
+      "file": "../prompts/char_v3_single_prompt.txt"
+    },
+    "blocks_full": {
+      "ASSETS": "CHARACTER — \"Vale\": Late-twenties woman, lean, choppy ash-blonde shag cut at chin length with a heavy fringe, light olive skin, dark straight eyebrows, a small silver hoop earring, a calm and unreadable face. Her look never changes: black leather biker jacket with silver zips and snaps, charcoal crew-neck tee, black leather belt with a brass buckle, dark straight-leg jeans, black lace-up combat boots. No hat, glasses or bag. She moves slowly and evenly, head level, arms relaxed, and never grins. She does not speak.\nLOCATION: a decaying 1980s Times Square at dusk. Puddled asphalt, steam curling out of street grates, neon tubes that sputter or have died, drooping theatre marquees and propaganda billboards for invented brands, grimy building fronts, yellow cabs, scraps of paper and ash skittering along the kerb. It sounds like far-off sirens, a droning generator, a murmuring crowd and humming neon.\n\nTHE COFFEE WOMAN: a stranger with long red hair in a dark green belted raincoat, mid-step, holding an unprinted white paper coffee cup with a lid in her right hand. She looks the same every time she appears.",
+      "SUMMARY": "Vale strolls straight at the lens along the packed, rain-soaked street of the square. One click of her fingers sends out a sphere of force that stops the entire city. She wanders among the stopped crowd, borrows a sip from the coffee woman's cup, returns it precisely, clicks again, and the city lurches back to life while she slips away into the crowd. Dry, unhurried, quietly in control.",
+      "STYLE": "Ultra-realistic live-action cinematography, shot on a real cinema camera: a single unbroken take on a stabilised rig that retreats ahead of her at her walking speed, keeping her mid-frame in a medium shot. 40 mm spherical prime, shallow depth of field, gentle halation around bright neon, fine 35 mm film grain. Dusk under low cloud; physically plausible light from orange sodium-vapour streetlamps and coloured neon spill, reflections pooling on wet pavement, haze and steam catching the light as soft volumetric beams. Real skin with visible pores, fine hair strands and natural imperfections. Extras move naturally and wear period-accurate early-1980s clothing: wool overcoats, trench coats, flat caps, denim, knitwear. Grim retro-future thriller mood, teal and amber grade, deep blacks.",
+      "PLOT": "0–4s: Medium shot at eye height. Vale heads toward the lens against a thick stream of people in the square; ash and paper drift by and a flock of pigeons cuts across the dark billboards overhead. The camera retreats smoothly. Sound: sirens, generator drone, crowd chatter, neon hum, boot heels on wet tarmac.\n4–5s: Still walking at the same pace, she lifts her right hand and clicks her fingers. A glowing sphere of force blooms from her fingertips, warping the air and bending the light as it rushes down the street: people halt in mid-step, raindrops and ash stop in the air, pigeons hang with wings spread, and a shimmer runs across the wet windows and neon. Sound: a crisp click, a low swelling boom, then dead silence.\n5–9s: The rig goes on retreating as she walks on through the motionless city, eyes drifting over the stopped faces and the beads of rain suspended in mid-air. Sound: nothing but her own footsteps and a thin, hollow reverb.\n9–12s: She halts next to the coffee woman, who is stopped in mid-step with her red hair floating out behind her. Vale looks her over for a moment, eases the paper cup out of her fingers, drinks a single mouthful, and sets it back into the same hand in exactly the same position. Sound: a soft paper crinkle, one swallow, silence.\n12–13s: She lifts her gaze to the lens, raises the same right hand and clicks once more. A bigger, harder sphere of force tears outward and undoes the stop: people carry on walking, the pigeons burst away, the coffee woman strolls off none the wiser with her cup still in hand, and the hanging rain and ash drop. Sound: second click, a heavier inverted boom, the full roar of the street rushing back.\n13–15s: She holds still for a heartbeat, then walks on as the rig goes on retreating, and the crowd folds in around her until she can no longer be seen. The picture fades gently to black. Sound: her footsteps carrying on beneath the street noise.",
+      "REQUIREMENTS": "- A single unbroken take: no cuts, no whip pans; the camera only ever moves backward.\n- Vale's face, hair, earring and every item of clothing stay the same in every frame; nothing is added, removed or swapped.\n- Only one cup exists. It goes back into the coffee woman's hand exactly where it was; it never doubles, disappears or floats.\n- Between the two finger clicks nothing moves except Vale: no walker, no raindrop, no bird.\n- Diegetic sound effects only: no music, no speech, no narration.\n- No on-screen text, captions, logos, watermarks or readable real-world brand names; signage shows only invented brands and propaganda (OBEY. CONSUME. REPEAT. / THE IRON CROWN / KAITO).\n- Must read as real filmed footage: no CGI look, no 3D-render or video-game look, no cartoon or illustration, no over-smoothed or waxy skin, no plastic faces, no airbrushed \"AI sheen\".\n- No text artifacts: no garbled, melted or nonsense lettering on any sign.\n- 16:9 frame. The shot ends on a gentle fade to black."
+    },
+    "render": {
+      "capability": "seedance-25-t2v",
+      "model": "Seedance 2.5 · text-to-video",
+      "settings": [
+        "prompt: the 5 blocks, as one text",
+        "duration: \"15\"",
+        "resolution: \"720p\"",
+        "aspect_ratio: \"16:9\"",
+        "generate_audio: true",
+        "async: true → poll get_create_media"
+      ],
+      "time": "~6 min render",
+      "cost": 7.45
+    },
+    "sound": {
+      "oneshots": [
+        {
+          "text": "snap one-shot a1",
+          "dur": "2",
+          "cost": 0.021,
+          "used": false
+        },
+        {
+          "text": "rain + city bed",
+          "dur": "15",
+          "cost": 0.1575,
+          "used": true
+        },
+        {
+          "text": "boot steps on wet pavement",
+          "dur": "6",
+          "cost": 0.063,
+          "used": true
+        },
+        {
+          "text": "pigeon wing flutter",
+          "dur": "3",
+          "cost": 0.0315,
+          "used": true
+        },
+        {
+          "text": "shockwave sub-boom",
+          "dur": "4",
+          "cost": 0.042,
+          "used": true
+        },
+        {
+          "text": "shockwave whoosh",
+          "dur": "3",
+          "cost": 0.0315,
+          "used": true
+        },
+        {
+          "text": "shockwave glassy shimmer",
+          "dur": "4",
+          "cost": 0.042,
+          "used": true
+        },
+        {
+          "text": "freeze tinnitus/room tone",
+          "dur": "9",
+          "cost": 0.0945,
+          "used": true
+        },
+        {
+          "text": "paper cup crinkle a1",
+          "dur": "3",
+          "cost": 0.0315,
+          "used": true
+        },
+        {
+          "text": "sip + swallow",
+          "dur": "3",
+          "cost": 0.0315,
+          "used": true
+        },
+        {
+          "text": "reverse boom swell",
+          "dur": "4",
+          "cost": 0.042,
+          "used": true
+        },
+        {
+          "text": "city rush-back slam",
+          "dur": "4",
+          "cost": 0.042,
+          "used": true
+        },
+        {
+          "text": "low tail under fade",
+          "dur": "4",
+          "cost": 0.042,
+          "used": true
+        },
+        {
+          "text": "paper cup crinkle a2",
+          "dur": "2",
+          "cost": 0.021,
+          "used": true
+        },
+        {
+          "text": "finger snap a2",
+          "dur": "1",
+          "cost": 0.0105,
+          "used": true
+        }
+      ],
+      "cost": 0.86,
+      "n": 16,
+      "v2v": {
+        "capability": "mirelo-sfx-v2v",
+        "text": "synced foley bed over whole video (footsteps, hits)",
+        "dur": "15"
+      },
+      "events": "SNAP1=3.95 (f95; native boom peak 3.99), FREEZE 3.96-12.13, TAKE CUP 8.75 (f210), SIP 9.85/swallow 10.3, RETURN 11.2 (f267-269), SNAP2=12.13 (f291), FADE 14.17-15.04",
+      "timeline": [
+        {
+          "t": 3.95,
+          "label": "snap 1"
+        },
+        {
+          "t": 3.96,
+          "t2": 12.13,
+          "label": "freeze · native audio −30 dB · 6.2 kHz ring"
+        },
+        {
+          "t": 9.85,
+          "label": "sip"
+        },
+        {
+          "t": 12.13,
+          "label": "snap 2"
+        },
+        {
+          "t": 14.17,
+          "t2": 15.0,
+          "label": "fade"
+        }
+      ],
+      "mix": "ffmpeg: adelay each hit → amix normalize=0 → alimiter → loudnorm −14 LUFS"
+    }
+  },
+  "clip": {
+    "source": "../outputs/post1_freeze_frame.mp4",
+    "placeholder": false,
+    "placeholder_crop": [
+      0,
+      20,
+      1036,
+      603
+    ],
+    "frames_dir": "assets/clip",
+    "fps": 30,
+    "duration_s": 15.0,
+    "hook_start_s": 3.2,
+    "outro_start_s": 9.0
+  },
+  "prompt": {
+    "source": "../prompts/prompt_v4_t2v.txt",
+    "placeholder": false,
+    "model": "Seedance 2.5",
+    "capability": "seedance-25-t2v",
+    "blocks": [
+      {
+        "tag": "ASSETS",
+        "name": "Cast + location, in words",
+        "keys": [
+          {
+            "tag": "CHARACTER \"Vale\"",
+            "text": "Late-twenties woman, lean, choppy ash-blonde shag cut at chin length with a…"
+          },
+          {
+            "tag": "LOCATION",
+            "text": "a decaying 1980s Times Square at dusk. Puddled asphalt, steam curling out…"
+          },
+          {
+            "tag": "THE COFFEE WOMAN",
+            "text": "a stranger with long red hair in a dark green belted raincoat,…"
+          }
+        ],
+        "highlight": 0,
+        "n_lines": 3,
+        "n_words": 182
+      },
+      {
+        "tag": "SUMMARY",
+        "name": "Summary",
+        "keys": [
+          {
+            "text": "One click of her fingers sends out a sphere of force that stops the entire city."
+          }
+        ],
+        "highlight": 0,
+        "n_lines": 1,
+        "n_words": 68
+      },
+      {
+        "tag": "STYLE",
+        "name": "Style",
+        "keys": [
+          {
+            "text": "Single unbroken take"
+          },
+          {
+            "text": "Ultra-realistic live-action cinematography"
+          },
+          {
+            "text": "40 mm spherical prime"
+          },
+          {
+            "text": "Shallow depth of field"
+          },
+          {
+            "text": "Dusk under low cloud"
+          },
+          {
+            "text": "Wool overcoats"
+          }
+        ],
+        "highlight": 0,
+        "n_lines": 1,
+        "n_words": 118
+      },
+      {
+        "tag": "PLOT",
+        "name": "Shot-by-shot plot",
+        "keys": [
+          {
+            "tag": "0–4s",
+            "text": "Medium shot at eye height"
+          },
+          {
+            "tag": "4–5s",
+            "text": "She lifts her right hand and clicks her fingers"
+          },
+          {
+            "tag": "5–9s",
+            "text": "The rig goes on retreating as she walks on…"
+          },
+          {
+            "tag": "9–12s",
+            "text": "Drinks a single mouthful"
+          },
+          {
+            "tag": "12–13s",
+            "text": "Raises the same right hand and clicks once more"
+          },
+          {
+            "tag": "13–15s",
+            "text": "The picture fades gently to black"
+          }
+        ],
+        "highlight": 1,
+        "n_lines": 6,
+        "n_words": 346
+      },
+      {
+        "tag": "REQUIREMENTS",
+        "name": "Locked rules",
+        "keys": [
+          {
+            "text": "A single unbroken take"
+          },
+          {
+            "text": "Between the two finger clicks nothing moves except Vale"
+          },
+          {
+            "text": "Only one cup exists"
+          }
+        ],
+        "highlight": 0,
+        "n_lines": 9,
+        "n_words": 172
+      }
+    ]
+  },
+  "approval": {
+    "page": "approve/freeze-frame-signoff.html",
+    "full": "assets/approval/from_plan.png",
+    "answers": "assets/approval/answers.png"
+  },
+  "text": {
+    "hook": "One 15-second shot. Made entirely by AI.",
+    "photos": "It starts with a photo and a description.",
+    "sheets": "AI turns them into reference images.",
+    "prompt_intro": "One prompt, written like a call sheet.",
+    "costs": "Every model call, and what it cost.",
+    "total_sub": "{n} model calls · one finished shot",
+    "outro_url": "earlyaccess.livepeer.org",
+    "loop": [
+      "AI plans",
+      "Human approves",
+      "AI executes"
+    ],
+    "blocks": {
+      "ASSETS": "1 · Cast and location, in words.",
+      "SUMMARY": "2 · The whole story in one line.",
+      "STYLE": "3 · Camera, light, grade. Never changes.",
+      "PLOT": "4 · Second by second, what happens.",
+      "REQUIREMENTS": "5 · Hard rules. Every defect adds one."
+    }
+  }
+}

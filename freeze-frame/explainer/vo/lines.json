@@ -1,0 +1,398 @@
+{
+ "voice": "Dennis (en)",
+ "capability": "inworld-tts",
+ "atempo": 1.15,
+ "lines": [
+  {
+   "key": "hook",
+   "text": "One AI shot. Here's the full recipe.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVlNDEveE1XQlNfZFRvV1pSRWROY2tEQ044Lndhdg.fbf4e600ebf44e3d/xMWBS_dToWZREdNckDCN8.wav",
+   "cost": 0.0004,
+   "idem": "p2v3-vo-hook-a1",
+   "dur": 2.318,
+   "wps": 3.02
+  },
+  {
+   "key": "s1",
+   "text": "Step one: GPT Image 2 turns a street photo into a five-panel location sheet.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVmZmIvb3BCMUU4Mm9GZlRfOV9TTWo3STc5Lndhdg.90e4bc5852aeaeff/opB1E82oFfT_9_SMj7I79.wav",
+   "cost": 0.0008,
+   "idem": "p2v4-vo-s1-a1",
+   "dur": 4.613,
+   "wps": 3.04
+  },
+  {
+   "key": "s2",
+   "text": "Step two: the character, designed from text. Late twenties, ash-blonde shag, black leather jacket, combat boots.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVmZmMvMG4zdFV4alRkS3Baa1VWaElJRm4zLndhdg.f7186f71cb28b2a1/0n3tUxjTdKpZkUVhIIFn3.wav",
+   "cost": 0.0012,
+   "idem": "p2v4-vo-s2-a1",
+   "dur": 6.084,
+   "wps": 2.63
+  },
+  {
+   "key": "s2b",
+   "text": "Then Nano Banana makes one street photo of her, walking at camera.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVmZmUvZ0otM1VzelQ1d2pyLVBpekpxWTBfLndhdg.648064eea60ebdfd/gJ-3UszT5wjr-PizJqY0_.wav",
+   "cost": 0.0007,
+   "idem": "p2v4-vo-s2b-a1",
+   "dur": 3.867,
+   "wps": 3.1
+  },
+  {
+   "key": "s3",
+   "text": "Step three: the video prompt. Five blocks.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVlNDYvS1Z6NXZSVnlZY2dWWEJOb2tyMFQyLndhdg.8ae21816ac8ad9fe/KVz5vRVyYcgVXBNokr0T2.wav",
+   "cost": 0.0004,
+   "idem": "p2v3-vo-s3-a1",
+   "dur": 2.427,
+   "wps": 2.88
+  },
+  {
+   "key": "b_ASSETS",
+   "text": "Block one: assets. The woman, the street and the coffee stranger, all in words.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWYwMDAvM185NlJhLXpfUmh5RE55Z2Q1dEdmLndhdg.a5a71033a5bb74ee/3_96Ra-z_RhyDNygd5tGf.wav",
+   "cost": 0.0008,
+   "idem": "p2v4-vo-b1-a1",
+   "dur": 4.064,
+   "wps": 3.45
+  },
+  {
+   "key": "b_SUMMARY",
+   "text": "Block two: the story, in one breath.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVlNDgvMHJyRjFkOEdab1VxSl9pZy1rYTQtLndhdg.453ef39b914b5c15/0rrF1d8GZoUqJ_ig-ka4-.wav",
+   "cost": 0.0004,
+   "idem": "p2v3-vo-b2-a1",
+   "dur": 2.093,
+   "wps": 3.34
+  },
+  {
+   "key": "b_STYLE",
+   "text": "Block three: one unbroken take, forty mil lens, shallow focus, sodium and neon light, film grain.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWYwMDkvbjhwRkFJclRqSUQzSzlaazVjeGtHLndhdg.956c96cfd89d518f/n8pFAIrTjID3K9Zk5cxkG.wav",
+   "cost": 0.001,
+   "idem": "p2v4-vo-b3-a1",
+   "dur": 5.46,
+   "wps": 2.93
+  },
+  {
+   "key": "b_PLOT",
+   "text": "Block four, second by second: she walks at camera. At four, the snap, the city freezes. Nine, the sip. Twelve, the second snap. Then fade out.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWYwMGQvRndxSVhRMFpXb2NrRE85dFZvUm9vLndhdg.5682b63c1906427e/FwqIXQ0ZWockDO9tVoRoo.wav",
+   "cost": 0.0015,
+   "idem": "p2v4-vo-b4-a1",
+   "dur": 7.488,
+   "wps": 3.47
+  },
+  {
+   "key": "b_REQUIREMENTS",
+   "text": "Block five: hard rules. Every mistake adds one.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVlNGMvY01ZRWdzcFZFcWlQR2xNZE94ZnA2Lndhdg.f6869fa14b4e2100/cMYEgspVEqiPGlMdOxfp6.wav",
+   "cost": 0.0005,
+   "idem": "p2v3-vo-b5-a1",
+   "dur": 3.044,
+   "wps": 2.63
+  },
+  {
+   "key": "s4",
+   "text": "Step four: Seedance two point five. Fifteen seconds, seven-twenty p, sixteen by nine, audio on.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWYwMGUvY2xBTGJWQ0N0MFNKTjhVT1RxRFNDLndhdg.ef510b5fb4162e25/clALbVCCt0SJN8UOTqDSC.wav",
+   "cost": 0.001,
+   "idem": "p2v4-vo-s4-a1",
+   "dur": 5.993,
+   "wps": 2.5
+  },
+  {
+   "key": "s5",
+   "text": "Step five: sound. Mirelo makes the snap, the boom, pigeons and the sip, plus a foley bed. Then ffmpeg mixes it.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWYwMGYvbS1DbkFkMnowTl8yeGFjcG9scGlrLndhdg.7cdb3cf9bfcfaffd/m-CnAd2z0N_2xacpolpik.wav",
+   "cost": 0.0012,
+   "idem": "p2v4-vo-s5-a1",
+   "dur": 6.454,
+   "wps": 3.25
+  },
+  {
+   "key": "s6",
+   "text": "Step six: AI plans. A human approves.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVlNGUvdE9vNGRfWUhwQmt5WnVJQmw4M3FOLndhdg.10e7135f8c2d0bd6/tOo4d_YHpBkyZuIBl83qN.wav",
+   "cost": 0.0004,
+   "idem": "p2v3-vo-s6-a1",
+   "dur": 2.53,
+   "wps": 2.77
+  },
+  {
+   "key": "answers",
+   "text": "Then the AI executes.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkM2MvOUphRkNpd3ROemNSRHhPanZtZWRRLndhdg.d85f13cff11e833a/9JaFCiwtNzcRDxOjvmedQ.wav",
+   "cost": 0.0002,
+   "idem": "p2-vo-answers-a1",
+   "dur": 1.348,
+   "wps": 2.97
+  },
+  {
+   "key": "costs",
+   "text": "Step seven: every call, every cent.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVlNGYvZkQzdDVVSzZIQTBBaDhTaGtqSXFuLndhdg.b6b10e97e3808ad6/fD3t5UK6HA0Ah8ShkjIqn.wav",
+   "cost": 0.0004,
+   "idem": "p2v3-vo-s7-a1",
+   "dur": 2.009,
+   "wps": 2.99
+  },
+  {
+   "key": "outro",
+   "text": "Pause it. Copy it. Make your own.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVlNTAvR2hKeVhMVGJkN3NEa003ai1mQzdPLndhdg.6077cb49aa15125c/GhJyXLTbd7sDkM7j-fC7O.wav",
+   "cost": 0.0003,
+   "idem": "p2v3-vo-outro-a1",
+   "dur": 1.671,
+   "wps": 4.19
+  },
+  {
+   "key": "total",
+   "text": "Total: thirteen dollars and nineteen cents.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWYwMWEvRWFYMUcwRVFnbVh4NUF2cl82X3plLndhdg.73b72517576cb8a4/EaX1G0EQgmXx5Avr_6_ze.wav",
+   "cost": 0.0005,
+   "idem": "p2v4-vo-total-1319-a1",
+   "dur": 2.247,
+   "wps": 2.67
+  }
+ ],
+ "tests": [
+  {
+   "text": "voice test Ashley (en)",
+   "cost": 0.0004,
+   "idem": "p2-vo-test-ashley-a1"
+  },
+  {
+   "text": "voice test Dennis (en) + speed=1.2 (ignored: undeclared param)",
+   "cost": 0.0004,
+   "idem": "p2-vo-test-dennis-speed-a1"
+  },
+  {
+   "text": "superseded take: AI turns them into reference images.",
+   "cost": 0.0004,
+   "idem": "p2-vo-sheets-a1"
+  },
+  {
+   "text": "superseded take: The video model's safety check refused them. Five times.",
+   "cost": 0.0006,
+   "idem": "p2-vo-safety-a-a1"
+  },
+  {
+   "text": "superseded take: Then, one prompt. Five parts.",
+   "cost": 0.0003,
+   "idem": "p2-vo-promptintro-a1"
+  },
+  {
+   "text": "superseded take: One: the cast and the place, in words.",
+   "cost": 0.0004,
+   "idem": "p2-vo-assets-a1"
+  },
+  {
+   "text": "superseded take: Three: camera and look, locked.",
+   "cost": 0.0003,
+   "idem": "p2-vo-style-a1"
+  },
+  {
+   "text": "superseded take: Five: hard rules. Every mistake adds one.",
+   "cost": 0.0004,
+   "idem": "p2-vo-rules-a1"
+  },
+  {
+   "text": "superseded take: Every call, every cent.",
+   "cost": 0.0002,
+   "idem": "p2-vo-costs-a2"
+  },
+  {
+   "text": "superseded v3 take: Step one: a street photo becomes a location sheet.",
+   "cost": 0.0005,
+   "idem": "p2v3-vo-s1-a1"
+  },
+  {
+   "text": "superseded v3 take: Step two: the character, designed from text.",
+   "cost": 0.0005,
+   "idem": "p2v3-vo-s2-a1"
+  },
+  {
+   "text": "superseded v3 take: Then one street photo of her.",
+   "cost": 0.0003,
+   "idem": "p2v3-vo-s2b-a1"
+  },
+  {
+   "text": "superseded v3 take: Block one: assets. Who and where, in words.",
+   "cost": 0.0005,
+   "idem": "p2v3-vo-b1-a1"
+  },
+  {
+   "text": "superseded v3 take: Block three: camera, lens and light.",
+   "cost": 0.0004,
+   "idem": "p2v3-vo-b3-a1"
+  },
+  {
+   "text": "superseded v3 take: Block four: the plot, second by second.",
+   "cost": 0.0004,
+   "idem": "p2v3-vo-b4-a1"
+  },
+  {
+   "text": "superseded v3 take: Step four: render it. Fifteen seconds, seven-twenty p.",
+   "cost": 0.0006,
+   "idem": "p2v3-vo-s4-a1"
+  },
+  {
+   "text": "superseded v3 take: Step five: sound. Fifteen effects, one foley bed, one mix.",
+   "cost": 0.0006,
+   "idem": "p2v3-vo-s5-a1"
+  },
+  {
+   "text": "superseded v3 take: Total: thirteen dollars and eighteen cents.",
+   "cost": 0.0005,
+   "idem": "p2v3-vo-total-1318-a1"
+  }
+ ],
+ "v2_lines": [
+  {
+   "key": "hook",
+   "text": "One AI shot. Here's how it was made.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkMmYvY0dScXFLOUlBanFCVllUWTB6X085Lndhdg.327a023107049ef4/cGRqqK9IAjqBVYTY0z_O9.wav",
+   "cost": 0.0004,
+   "idem": "p2-vo-test-dennis-a1",
+   "dur": 1.923,
+   "wps": 4.16
+  },
+  {
+   "key": "photos",
+   "text": "It starts with a photo, and a description.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkMzQvZ0dZUFY1SXFQVmhFeXY2Q1FvZ1NGLndhdg.181feddc8476f1da/gGYPV5IqPVhEyv6CQogSF.wav",
+   "cost": 0.0004,
+   "idem": "p2-vo-photos-a1",
+   "dur": 1.874,
+   "wps": 4.27
+  },
+  {
+   "key": "sheets",
+   "text": "AI makes reference images.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkNDkvLXF2NHlrODJoZGlrbFRxbWtzaVIwLndhdg.6f7c41c7b37276b2/-qv4yk82hdiklTqmksiR0.wav",
+   "cost": 0.0003,
+   "idem": "p2-vo-sheets-a2",
+   "dur": 1.827,
+   "wps": 2.19
+  },
+  {
+   "key": "safety_a",
+   "text": "The safety check refused them. Five times.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkNGEvSjBiZ1F1eEdxd0tSUTJfd3pGeTNoLndhdg.f076f06e33c9b6a0/J0bgQuxGqwKRQ2_wzFy3h.wav",
+   "cost": 0.0004,
+   "idem": "p2-vo-safety-a-a2",
+   "dur": 2.587,
+   "wps": 2.71
+  },
+  {
+   "key": "safety_b",
+   "text": "So we wrote her in words instead.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkMzYvdHBiM3Roa0NDSnBkNWhrbndybnltLndhdg.bca97b9c35c8caa9/tpb3thkCCJpd5hknwrnym.wav",
+   "cost": 0.0003,
+   "idem": "p2-vo-safety-b-a1",
+   "dur": 1.752,
+   "wps": 3.99
+  },
+  {
+   "key": "promptIntro",
+   "text": "One prompt. Five parts.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkNGIvQzNScVBxSU95NUxORXFYTUFGYkhuLndhdg.6bf9502d158b7c21/C3RqPqIOy5LNEqXMAFbHn.wav",
+   "cost": 0.0002,
+   "idem": "p2-vo-promptintro-a2",
+   "dur": 1.583,
+   "wps": 2.53
+  },
+  {
+   "key": "ASSETS",
+   "text": "One: cast and place, in words.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkNGIvMHhVX3RYMWhSUFRnYVNYQXYxSGtxLndhdg.f8715bbd5ed71196/0xU_tX1hRPTgaSXAv1Hkq.wav",
+   "cost": 0.0003,
+   "idem": "p2-vo-assets-a2",
+   "dur": 2.245,
+   "wps": 2.67
+  },
+  {
+   "key": "SUMMARY",
+   "text": "Two: the story, in one line.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkMzgvTnVUMXdocWNVa0N5NXJjcUExNjNnLndhdg.eb278839ae659d61/NuT1whqcUkCy5rcqA163g.wav",
+   "cost": 0.0003,
+   "idem": "p2-vo-summary-a1",
+   "dur": 1.864,
+   "wps": 3.22
+  },
+  {
+   "key": "STYLE",
+   "text": "Three: the look, locked.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkNGMveHYxUUkzc0NvYVp4UFAwTEdWRjdHLndhdg.498b5994f477459f/xv1QI3sCoaZxPP0LGVF7G.wav",
+   "cost": 0.0003,
+   "idem": "p2-vo-style-a2",
+   "dur": 1.49,
+   "wps": 2.68
+  },
+  {
+   "key": "PLOT",
+   "text": "Four: second by second.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkM2EvSlM5cFlHOUxEVzMwVzFLM0hmbkp5Lndhdg.eb43edab03e5e324/JS9pYG9LDW30W1K3HfnJy.wav",
+   "cost": 0.0002,
+   "idem": "p2-vo-plot-a1",
+   "dur": 1.543,
+   "wps": 2.59
+  },
+  {
+   "key": "REQUIREMENTS",
+   "text": "Five: hard rules.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkNGQvMGU2QjZuVnp6a0Z6VVV4QkNraUlhLndhdg.e0644a67d1c424f6/0e6B6nVzzkFzUUxBCkiIa.wav",
+   "cost": 0.0002,
+   "idem": "p2-vo-rules-a2",
+   "dur": 1.358,
+   "wps": 2.21
+  },
+  {
+   "key": "approval",
+   "text": "AI plans. A human approves.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkM2IvUU80QzlNWndLWUgzTDFKakp1R0IwLndhdg.239312eaa2c193e3/QO4C9MZwKYH3L1JjJuGB0.wav",
+   "cost": 0.0003,
+   "idem": "p2-vo-approval-a1",
+   "dur": 1.811,
+   "wps": 2.76
+  },
+  {
+   "key": "answers",
+   "text": "Then the AI executes.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkM2MvOUphRkNpd3ROemNSRHhPanZtZWRRLndhdg.d85f13cff11e833a/9JaFCiwtNzcRDxOjvmedQ.wav",
+   "cost": 0.0002,
+   "idem": "p2-vo-answers-a1",
+   "dur": 1.348,
+   "wps": 2.97
+  },
+  {
+   "key": "costs",
+   "text": "Every call, every cent. Failures too.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkM2QvNHh5cm85NGRabG9XazFrcnNqTzdOLndhdg.e95e8f4770b60534/4xyro94dZloWk1krsjO7N.wav",
+   "cost": 0.0004,
+   "idem": "p2-vo-costs-a1",
+   "dur": 2.188,
+   "wps": 2.74
+  },
+  {
+   "key": "total",
+   "text": "Total: thirteen dollars and seventeen cents.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkOTAvUGlEc0lUOWpWclM4b3ZwLWpwb291Lndhdg.333cc45e69c323c1/PiDsIT9jVrS8ovp-jpoou.wav",
+   "cost": 0.0005,
+   "idem": "p2-vo-total-1317-a1",
+   "dur": 2.197,
+   "wps": 2.73
+  },
+  {
+   "key": "outro",
+   "text": "One shot. Made on Livepeer.",
+   "url": "https://agent.livepeer.org/a/aHR0cHM6Ly92M2IuZmFsLm1lZGlhL2ZpbGVzL2IvMGFhYWVkM2YvREVCQ0VraURsMURHRzRTSXQ1YWJ2Lndhdg.7532d6a37a653e91/DEBCEkiDl1DGG4SIt5abv.wav",
+   "cost": 0.0003,
+   "idem": "p2-vo-outro-a1",
+   "dur": 1.856,
+   "wps": 2.69
+  }
+ ]
+}

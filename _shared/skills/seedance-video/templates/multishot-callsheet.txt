@@ -1,0 +1,29 @@
+[1 — ASSET BINDING]
+@image1 — LOCATION REFERENCE. {place}: {ground / surfaces}, {landmarks near and far}, {sky / weather}, {time of day}, {atmospherics: haze, dust, rain}. Sound: {ambient bed}, {surface noise under action}. Drives terrain, colour, atmosphere and light throughout.
+
+@image2 — CHARACTER REFERENCE, {HANDLE}. {skin}, {eyes}, {makeup}, {hair: length, colour, parting}. {wardrobe top to bottom, materials, colours}. {accessories}. {footwear}. {temperament / movement quality, one clause}. Sound: {voice or none}.
+
+@image3 — PROP REFERENCE, {OWNER'S OBJECT}. {type}, {body material + colour + wear}, {signature feature}, {secondary details}. {where it sits / who holds it}. {what it does, if anything}. Sound: {idle} {under load}.
+
+{THE SECOND PERSON (no image) — text-only character entry, only if using workaround A}
+
+[2 — SUMMARY]
+The {noun} from @image2 {action} the {noun} from @imageN {…} across {location}. {Key event} {— and the explicit outcome}.
+
+[3 — STYLE]
+{Live-action | animated} {genre} film. Shot on {format / lens family} — {wide lenses for …}, {long lens with shallow depth of field for …}. {Key light: direction + hardness}, {shadow behaviour}, {palette contrast}, {atmospheric light}. {Texture: grain, dynamic range, flare}. {Feel line: e.g. kinetic, weighty, practical}. {Realism line}.
+
+[4 — DETAILED PLOT]
+0-{a}s: Establishing. {shot size + angle}, {camera move} across {location}. {all key assets placed, by tag}. {environmental motion}. {camera transition into next framing}.
+{a}-{b}s: Hard cut. {shot size} on the {noun} from @imageN, {camera move}. {one action}. {micro-performance}. {sound cue}.
+{b}-{c}s: Hard cut. {shot size} of the {noun} from @imageN, {camera move}. {one action}. {sound cue}.
+{c}-{d}s: Hard cut. {shot size} from {angle}. {one action with prop @imageN}. {detail catching light}. {building sound}.
+{d}-{end}s: Hard cut. {shot size + angle}, {camera move}. {payoff action}. {how the scene closes}.
+
+[5 — OVERALL REQUIREMENTS]
+Audio: {No music, SFX only | dialogue rule}.
+Keep constant: each character keeps the exact face, hair, makeup and wardrobe from their reference in every shot; {who stays on/with which prop} for the full duration; consistent grade, grain, lens character and time of day across all {N} shots; every shot carries a distinct camera move.
+Strictly avoid: {headcount lock: only X and Y — no other people/vehicles}; warping of {wheels, frames, limbs, hands}; on-screen text, logos, watermarks; cuts other than the written hard cuts.
+Physics: {real weight: suspension compresses, tyres deform, debris behaves as heavy particulate}.
+Outcome: {effect colour/behaviour and the exact result, e.g. clearly misses}.
+Fix from last run: {empty on first render; one rule per observed defect}.

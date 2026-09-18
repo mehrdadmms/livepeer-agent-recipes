@@ -1,0 +1,154 @@
+<!--
+  video-remake sign-off page template.
+  Do not hand-edit per project: fill it with scripts/fill_signoff.py <spec.json> <out.html>.
+  Placeholders (all replaced by the fill script):
+    {{TITLE}} {{TITLE_ACCENT}} {{LEDE}}     header
+    {{SHEETS}}                               one <figure> per sheet (base64 image + Approve/Redo toggle)
+    {{PLAN}}                                 <li> rows; human gates get class="you"
+    {{MONEY}}                                cost tiles (spent / expected / worst / hard stop)
+    {{BEATS}} {{BEATS_NOTE}}                 explainer beat sheet, one row
+    {{QUESTIONS}}                            <=5 quick decisions, defaults preselected
+    {{CONFIG_JSON}}                          data the copy-button script reads (sheet ids, question labels, footer lines)
+  Visual design (palette, fonts, layout) is the one the user approved on 2026-09-18; keep it.
+-->
+<title>{{TITLE}} Sign-off</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#14110e; --panel:#1d1915; --line:#3a332b;
+  --ink:#f1e9dd; --muted:#a3988a; --sodium:#f2a03d; --ok:#7fc98f; --redo:#e2705a;
+  --display:"Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+body{background:var(--ground);color:var(--ink);font:16px/1.5 var(--body);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:grid;gap:28px}
+.wrap>*{min-width:0}
+h1{font:700 clamp(30px,6vw,46px)/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em;margin:0}
+h1 span{color:var(--sodium)}
+.lede{color:var(--muted);margin:6px 0 0}
+h2{font:500 20px/1.2 var(--display);text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--mono);color:var(--sodium);font-size:14px}
+section{border-top:1px solid var(--line);padding-top:20px}
+.sheets{display:grid;gap:18px}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+figure img{display:block;width:100%;height:auto}
+figcaption{padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+figcaption b{font-weight:600}
+figcaption small{color:var(--muted);display:block;font-size:13px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{padding:6px 14px;cursor:pointer;font-weight:600;font-size:14px;color:var(--muted)}
+.seg input:checked+label.yes{background:var(--ok);color:#10200f}
+.seg input:checked+label.no{background:var(--redo);color:#2a0e08}
+.seg input:focus-visible+label{outline:2px solid var(--sodium);outline-offset:-2px}
+.note{width:100%;box-sizing:border-box;background:var(--ground);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font:14px var(--body)}
+.note[hidden]{display:none}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.flow li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.flow .dot{font-family:var(--mono);color:var(--muted);font-size:13px;padding-top:2px}
+.flow li.you .dot{color:var(--sodium)}
+.flow li.you b{color:var(--sodium)}
+.money{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.money div{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.money .v{font:700 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.money .k{color:var(--muted);font-size:13px;margin-top:4px}
+.money .spent .v{color:var(--ok)}
+.beats{display:flex;gap:4px;overflow-x:auto}
+.beats div{flex:1 1 0;min-width:110px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font-size:13px}
+.beats b{display:block;font-family:var(--mono);color:var(--sodium);font-size:12px}
+.qs{display:grid;gap:14px}
+.q{display:grid;gap:6px}
+.q p{margin:0;font-weight:600}
+.q p small{font-weight:400;color:var(--muted)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label{border:1px solid var(--line);border-radius:4px;padding:6px 12px;cursor:pointer;font-size:14px;color:var(--muted)}
+.opts input:checked+label{border-color:var(--sodium);color:var(--ink);background:#2b2117}
+.opts input:focus-visible+label{outline:2px solid var(--sodium)}
+.send{background:var(--panel);border:1px solid var(--sodium);border-radius:6px;padding:16px;display:grid;gap:10px}
+.send textarea{width:100%;box-sizing:border-box;min-height:120px;background:var(--ground);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:10px;font:13px/1.5 var(--mono);resize:vertical}
+button{justify-self:start;background:var(--sodium);color:#1b1206;border:0;border-radius:4px;padding:10px 18px;font:700 15px var(--display);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.tiny{color:var(--muted);font-size:13px;margin:0}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>{{TITLE}} · <span>{{TITLE_ACCENT}}</span></h1>
+    <p class="lede">{{LEDE}}</p>
+  </header>
+
+  <section>
+    <h2><span class="n">1</span> Reference sheets</h2>
+    <div class="sheets">
+{{SHEETS}}
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span> The plan</h2>
+    <ol class="flow">
+{{PLAN}}
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span> Cost</h2>
+    <div class="money">
+{{MONEY}}
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span> {{BEATS_HEADING}}</h2>
+    <div class="beats">
+{{BEATS}}
+    </div>
+    <p class="tiny" style="margin-top:8px">{{BEATS_NOTE}}</p>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span> Quick decisions</h2>
+    <div class="qs">
+{{QUESTIONS}}
+    </div>
+  </section>
+
+  <div class="send">
+    <button type="button" id="copy">Copy my answers</button>
+    <textarea id="out" readonly aria-label="Your answers"></textarea>
+    <p class="tiny" id="status">Paste the answers into the terminal.</p>
+  </div>
+</div>
+
+<script id="cfg" type="application/json">{{CONFIG_JSON}}</script>
+<script>
+const CFG=JSON.parse(document.getElementById("cfg").textContent);
+const $=s=>document.querySelector(s);
+function val(n){const r=document.querySelector(`input[name="${n}"]:checked`);return r?r.value:"";}
+function sync(){
+  for(const s of CFG.sheets){ $("#"+s.id+"-note").hidden = val(s.id)!=="redo"; }
+  const line=(k,label)=>{const v=val(k);const note=$("#"+k+"-note").value.trim();return `${label}: ${v.toUpperCase()}${v==="redo"&&note?" — "+note:""}`;};
+  $("#out").value=[
+    "SIGN-OFF",
+    ...CFG.sheets.map(s=>line(s.id,s.label)),
+    ...CFG.questions.map(q=>q.label+": "+val(q.id)),
+    ...CFG.footer
+  ].join("\n");
+}
+document.addEventListener("input",sync);document.addEventListener("change",sync);sync();
+$("#copy").addEventListener("click",async()=>{
+  sync();
+  const txt=$("#out").value, ta=$("#out");
+  // Sandboxed iframes often block navigator.clipboard silently, so copy from the selected textarea first (a user gesture makes this allowed).
+  ta.focus();ta.select();ta.setSelectionRange(0,txt.length);
+  let ok=false;try{ok=document.execCommand("copy");}catch(e){}
+  if(!ok){try{await navigator.clipboard.writeText(txt);ok=true;}catch(e){}}
+  const first=txt.split("\n").slice(1,4).join(" · ");
+  $("#status").textContent=ok?"Copied: "+first+" … Paste it into the terminal.":"Copy is blocked here. The text below is selected, so press Cmd+C.";
+});
+</script>

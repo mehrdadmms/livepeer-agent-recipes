@@ -1,0 +1,30 @@
+[ASSETS]
+CHARACTER — "Vale": Late-twenties woman, lean, choppy ash-blonde shag cut at chin length with a heavy fringe, light olive skin, dark straight eyebrows, a small silver hoop earring, a calm and unreadable face. Her look never changes: black leather biker jacket with silver zips and snaps, charcoal crew-neck tee, black leather belt with a brass buckle, dark straight-leg jeans, black lace-up combat boots. No hat, glasses or bag. She moves slowly and evenly, head level, arms relaxed, and never grins. She does not speak.
+LOCATION: a decaying 1980s Times Square at dusk. Puddled asphalt, steam curling out of street grates, neon tubes that sputter or have died, drooping theatre marquees and propaganda billboards for invented brands, grimy building fronts, yellow cabs, scraps of paper and ash skittering along the kerb. It sounds like far-off sirens, a droning generator, a murmuring crowd and humming neon.
+
+THE COFFEE WOMAN: a stranger with long red hair in a dark green belted raincoat, mid-step, holding an unprinted white paper coffee cup with a lid in her right hand. She looks the same every time she appears.
+
+[SUMMARY]
+Vale strolls straight at the lens along the packed, rain-soaked street of the square. One click of her fingers sends out a sphere of force that stops the entire city. She wanders among the stopped crowd, borrows a sip from the coffee woman's cup, returns it precisely, clicks again, and the city lurches back to life while she slips away into the crowd. Dry, unhurried, quietly in control.
+
+[STYLE]
+Ultra-realistic live-action cinematography, shot on a real cinema camera: a single unbroken take on a stabilised rig that retreats ahead of her at her walking speed, keeping her mid-frame in a medium shot. 40 mm spherical prime, shallow depth of field, gentle halation around bright neon, fine 35 mm film grain. Dusk under low cloud; physically plausible light from orange sodium-vapour streetlamps and coloured neon spill, reflections pooling on wet pavement, haze and steam catching the light as soft volumetric beams. Real skin with visible pores, fine hair strands and natural imperfections. Extras move naturally and wear period-accurate early-1980s clothing: wool overcoats, trench coats, flat caps, denim, knitwear. Grim retro-future thriller mood, teal and amber grade, deep blacks.
+
+[PLOT]
+0–4s: Medium shot at eye height. Vale heads toward the lens against a thick stream of people in the square; ash and paper drift by and a flock of pigeons cuts across the dark billboards overhead. The camera retreats smoothly. Sound: sirens, generator drone, crowd chatter, neon hum, boot heels on wet tarmac.
+4–5s: Still walking at the same pace, she lifts her right hand and clicks her fingers. A glowing sphere of force blooms from her fingertips, warping the air and bending the light as it rushes down the street: people halt in mid-step, raindrops and ash stop in the air, pigeons hang with wings spread, and a shimmer runs across the wet windows and neon. Sound: a crisp click, a low swelling boom, then dead silence.
+5–9s: The rig goes on retreating as she walks on through the motionless city, eyes drifting over the stopped faces and the beads of rain suspended in mid-air. Sound: nothing but her own footsteps and a thin, hollow reverb.
+9–12s: She halts next to the coffee woman, who is stopped in mid-step with her red hair floating out behind her. Vale looks her over for a moment, eases the paper cup out of her fingers, drinks a single mouthful, and sets it back into the same hand in exactly the same position. Sound: a soft paper crinkle, one swallow, silence.
+12–13s: She lifts her gaze to the lens, raises the same right hand and clicks once more. A bigger, harder sphere of force tears outward and undoes the stop: people carry on walking, the pigeons burst away, the coffee woman strolls off none the wiser with her cup still in hand, and the hanging rain and ash drop. Sound: second click, a heavier inverted boom, the full roar of the street rushing back.
+13–15s: She holds still for a heartbeat, then walks on as the rig goes on retreating, and the crowd folds in around her until she can no longer be seen. The picture fades gently to black. Sound: her footsteps carrying on beneath the street noise.
+
+[REQUIREMENTS]
+- A single unbroken take: no cuts, no whip pans; the camera only ever moves backward.
+- Vale's face, hair, earring and every item of clothing stay the same in every frame; nothing is added, removed or swapped.
+- Only one cup exists. It goes back into the coffee woman's hand exactly where it was; it never doubles, disappears or floats.
+- Between the two finger clicks nothing moves except Vale: no walker, no raindrop, no bird.
+- Diegetic sound effects only: no music, no speech, no narration.
+- No on-screen text, captions, logos, watermarks or readable real-world brand names; signage shows only invented brands and propaganda (OBEY. CONSUME. REPEAT. / THE IRON CROWN / KAITO).
+- Must read as real filmed footage: no CGI look, no 3D-render or video-game look, no cartoon or illustration, no over-smoothed or waxy skin, no plastic faces, no airbrushed "AI sheen".
+- No text artifacts: no garbled, melted or nonsense lettering on any sign.
+- 16:9 frame. The shot ends on a gentle fade to black.

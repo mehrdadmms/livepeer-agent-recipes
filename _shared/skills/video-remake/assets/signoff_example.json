@@ -1,0 +1,155 @@
+{
+  "_comment": "Filled with the values from the first run (Freeze Frame, 2026-09-18). Copy, replace every value, keep the shape. Image paths are relative to this JSON or absolute. This page is screen-captured into the explainer post, so every string must be neutral: never mention the source video, a remake, recreating or 'inspired by'.",
+  "title": "Freeze Frame",
+  "title_accent": "Sign-off",
+  "lede": "Freeze Frame: a time-freeze short set in dystopian 1980s NYC, plus a \"how it was made\" video. The defaults are already selected: press the button at the bottom and paste the result into the terminal.",
+  "sheets": [
+    {
+      "id": "char",
+      "label": "Character sheet",
+      "image": "/path/to/sheets/charsheet_v1.png",
+      "alt": "Character sheet: blonde woman in black leather jacket, jeans and combat boots, four full-body views and three face close-ups",
+      "note": "Watch: her face looks a bit younger in the 3/4 view. I'll lock identity to the front view and the close-ups."
+    },
+    {
+      "id": "env",
+      "label": "Environment sheet",
+      "image": "/path/to/sheets/envsheet_v1.png",
+      "alt": "Environment sheet: five panels of a smoggy, decaying 1980s Times Square with fictional billboards",
+      "note": "All brands are fictional. Smog came out brown-orange rather than green."
+    }
+  ],
+  "plan": [
+    {
+      "html": "Make <b>4 scene stills</b>: walk, freeze, coffee sip, resume"
+    },
+    {
+      "text": "You approve the stills",
+      "gate": true
+    },
+    {
+      "html": "One continuous <b>15s Seedance 2.5</b> take: a cheap 480p draft, then the <b>720p 16:9 final</b>"
+    },
+    {
+      "text": "You approve the final",
+      "gate": true
+    },
+    {
+      "text": "Post 2 is built from Post 1's assets and real costs. No new generation."
+    }
+  ],
+  "money": {
+    "spent": "$0.69",
+    "spent_label": "spent so far (3 sheet runs)",
+    "expected": "~$13",
+    "worst": "~$32",
+    "hard_stop": "$35",
+    "hard_stop_label": "hard stop (pause at $25)"
+  },
+  "beats_heading": "Post 2 at a glance",
+  "beats": [
+    {
+      "t": "0–2.5s",
+      "what": "Final clip + total $"
+    },
+    {
+      "t": "2.5–5s",
+      "what": "The two sheets"
+    },
+    {
+      "t": "5–10.5s",
+      "what": "Each step · model · cost"
+    },
+    {
+      "t": "10.5–13s",
+      "what": "Big total"
+    },
+    {
+      "t": "13–16s",
+      "what": "Clip + Livepeer"
+    }
+  ],
+  "beats_note": "16s instead of 34s. No voiceover and works with the sound off. Uses the black and green look from your example.",
+  "questions": [
+    {
+      "id": "cap",
+      "label": "Spend cap",
+      "question": "Raise the Livepeer 24h spend cap?",
+      "hint": "About $69 was spent on this key in the last 24h, over the $50 cap, so the video can't render until the cap goes up.",
+      "options": [
+        {
+          "label": "Raise to $120",
+          "value": "raise to $120"
+        },
+        {
+          "label": "Wait for reset",
+          "value": "wait for window to reset"
+        }
+      ],
+      "default": 0
+    },
+    {
+      "id": "bys",
+      "label": "Coffee woman",
+      "question": "Frozen coffee woman",
+      "options": [
+        {
+          "label": "Lock her with a still (+$0.08)",
+          "value": "generate a locked still (+$0.08)"
+        },
+        {
+          "label": "Prompt only",
+          "value": "text prompt only"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "label": "Post 1 ending",
+      "question": "Ending of Post 1",
+      "options": [
+        {
+          "label": "Fade out",
+          "value": "fade out"
+        },
+        {
+          "label": "Hold last frame",
+          "value": "hold last frame"
+        }
+      ]
+    },
+    {
+      "id": "fail",
+      "label": "Failed renders on slide",
+      "question": "Failed renders on the cost slide",
+      "options": [
+        {
+          "label": "Show as own line",
+          "value": "show as own line"
+        },
+        {
+          "label": "Fold into total",
+          "value": "fold into total"
+        }
+      ]
+    },
+    {
+      "id": "draft",
+      "label": "Draft in Post 2",
+      "question": "Show the 480p draft in Post 2?",
+      "options": [
+        {
+          "label": "Final only",
+          "value": "final only"
+        },
+        {
+          "label": "Show as \"before\"",
+          "value": "show draft as a 'before' beat"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    "Plan + budget ($35 hard stop): approved"
+  ]
+}
