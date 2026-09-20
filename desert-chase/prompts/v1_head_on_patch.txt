@@ -1,0 +1,21 @@
+capability: seedance-25-ref2v | image_urls: [refs/image1_car_a_front34.jpg, refs/image3_car_b_front34.jpg, refs/image6_location_road.jpg], NO video ref | duration "4", resolution "720p", aspect_ratio "16:9" | ~$1.99 | key dc-patch-1325-v1 | EXACT, as run. Replaces frames 318-360 of the 20 s render (it leaked a grey-box placeholder car there); frames 48-90 of this clip are used.
+[ASSETS]
+@Image1 — CAR A, front three-quarter: a custom 1967 fastback muscle car, pepper-grey metallic with two gloss-black racing stripes over hood, roof and trunk, black mesh grille with two round centre driving lights, silver five-spoke wheels. Heavy, raw big-block V8 with side-exit exhausts.
+@Image2 — CAR B, front three-quarter: a 1999 Japanese sports coupe (R34 shape), Bayside Blue metallic, carbon front lip, bronze six-spoke wheels. Twin-turbo inline-six.
+@Image3 — LOCATION road level: two-lane Nevada desert highway, double yellow centre line, white edge lines, gravel shoulders, sagebrush, flat-topped rust-brown mesas, low golden-hour sun.
+
+[SUMMARY]
+Head-on low tracking shot: CAR A charges straight at the camera with CAR B tucked right behind it, both flat-out into the low sun.
+
+[STYLE]
+Real-life car-chase cinematography shot on a full-frame cinema camera from a low camera car driving ahead of the cars, like a live-action Need for Speed. Ultra photoreal, low golden-hour sun behind the cars with lens flare, heat shimmer, dust off the shoulders, real motion blur, road vibration, slight film grain, warm teal-orange grade. Not CGI, not a video game.
+
+[PLOT]
+0–4s: one continuous shot. Camera just above the asphalt, driving backwards ahead of the cars, looking back at them over the double yellow line. CAR A (as @Image1) fills the centre of frame, grille and round driving lights charging at the lens, weaving slightly; CAR B (as @Image2) sits right behind it in the other lane, its blue nose poking out, closing in. Sun flare behind them, dust hanging in the air. Big-block V8 roaring toward camera, turbo whistle behind it, tyre roar.
+
+[REQUIREMENTS]
+- CAR A is exactly the grey fastback from @Image1 and CAR B exactly the blue coupe from @Image2; never swap, merge or add cars.
+- Both cars are real, fully detailed cars in every frame: no boxy grey shapes, no placeholder geometry.
+- Environment only from @Image3.
+- Audio: engines, tyres and wind only. No music, no dialogue.
+- No text, no licence-plate characters, no badges, no logos, no watermark.

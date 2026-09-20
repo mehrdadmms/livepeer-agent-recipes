@@ -1,34 +1,28 @@
 # Desert chase
 
-A 20 s photoreal desert car chase that was never filmed: blocked out as grey boxes in Blender, cut to the beat of the music, then rendered by Seedance 2.5 on the Livepeer agent using the blurred Blender previs as the motion guide and these sheets as the cast.
+A 20 s photoreal desert car chase that was never filmed: blocked out as grey boxes in Blender, cut to the beat of a music track, then rendered by Seedance 2.5 on the Livepeer agent with the blurred Blender previs as the motion guide and three character sheets as the cast.
 
-This folder holds the two things you need to reuse the look: the character sheets and the v1 prompt.
+Everything needed to make it again is here: the Blender scripts, every prompt exactly as sent, the sheets and reference images, the motion references and the assembly scripts. **Start with [`SKILL.md`](SKILL.md)**, the step-by-step runbook.
 
-## What is here
-
-| File | What it is |
+| Folder | What's in it |
 |---|---|
-| `refs/car1_sheet.png` | CAR A, the lead car. Four views on one sheet: A front three-quarter (top left), B side (top right), C rear three-quarter (bottom left), D front (bottom right). |
-| `refs/car2_sheet.png` | CAR B, the chaser. Same four views, same order. |
-| `refs/env_sheet.png` | The location. A wide (top left), B road level (top right), C aerial (bottom left), D side (bottom right). |
-| `prompts/v1_seedance_ref2v_prompt.txt` | The exact five-block call sheet used for the v1 render. |
-
-All three sheets were generated with `gpt-image-edit` from a Blender 2x2 layout of grey-box renders, one call each.
+| `blender/` | Previs pipeline: scene, beat detection, export, review render, sheet layouts. |
+| `prompts/` | Sheets, probe, 20 s render, head-on patch, engine sound, the two shot fixes. |
+| `refs/` | Sheets, Blender layouts, the six `@Image` crops, the `@Video1` motion reference, fix inputs. |
+| `scripts/` | Layouts, reference crops, fix references, soundtrack, frame-accurate assembly. |
 
 ## How the prompt's tags map to the sheets
 
-Seedance's reference check refuses multi-view sheets, so each `@Image` in the prompt is ONE panel cropped out of a sheet, not the whole sheet:
+Seedance's reference check refuses multi-view sheets, so each `@Image` is ONE panel cropped out of a sheet:
 
-| Tag | Crop |
-|---|---|
-| `@Image1` | `car1_sheet.png`, panel A (front three-quarter) |
-| `@Image2` | `car1_sheet.png`, panel C (rear three-quarter) |
-| `@Image3` | `car2_sheet.png`, panel A |
-| `@Image4` | `car2_sheet.png`, panel C |
-| `@Image5` | `env_sheet.png`, panel A (wide) |
-| `@Image6` | `env_sheet.png`, panel B (road level) |
-| `@Video1` | the 20 s Blender previs, blurred (`gblur sigma 5`), passed as `video_urls` |
+| Tag | File | Crop |
+|---|---|---|
+| `@Image1` | `refs/image1_car_a_front34.jpg` | `car1_sheet.png`, top left |
+| `@Image2` | `refs/image2_car_a_rear34.jpg` | `car1_sheet.png`, bottom left |
+| `@Image3` | `refs/image3_car_b_front34.jpg` | `car2_sheet.png`, top left |
+| `@Image4` | `refs/image4_car_b_rear34.jpg` | `car2_sheet.png`, bottom left |
+| `@Image5` | `refs/image5_location_wide.jpg` | `env_sheet.png`, top left |
+| `@Image6` | `refs/image6_location_road.jpg` | `env_sheet.png`, top right |
+| `@Video1` | `refs/video1_motion_ref20.mp4` | the 20 s Blender previs, 640x360, blurred |
 
-Call shape: `seedance-25-ref2v`, `image_urls` = the six crops in that order, `video_urls` = the blurred previs, `duration: "20"`, `resolution: "720p"`, `aspect_ratio: "16:9"`.
-
-See [`_shared/skills/seedance-video`](../_shared/skills/seedance-video/) for the five-block prompt format, timeouts and the reference-check rules.
+Not included: the music (bring your own track; the cuts follow its beats) and the rendered video.

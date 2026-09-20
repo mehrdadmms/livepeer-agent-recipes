@@ -14,7 +14,7 @@ Every piece has its own folder. Each folder is a Claude Code **skill**:
 | Recipe | What it is | Length | Cost | Skill triggers |
 |---|---|---|---|---|
 | [`freeze-frame/`](freeze-frame/) | A 15 s ultra-realistic single take: a woman snaps her fingers and a rainy, dystopian 1980s Times Square freezes. She sips a frozen stranger's coffee, snaps again, and the city resumes. Plus a 66 s narrated "full recipe" explainer. | 15 s + 66 s | $13.19 | "make the freeze-frame video", "time freeze snap video", "reproduce freeze frame" |
-| [`desert-chase/`](desert-chase/) | Assets for a 20 s photoreal desert car chase blocked out in Blender and rendered with Seedance 2.5: the three character sheets (two cars, one location) and the exact v1 prompt. Assets only, not a full runbook yet. | 20 s | n/a | n/a |
+| [`desert-chase/`](desert-chase/) | A 20 s photoreal desert car chase blocked out in Blender, cut to the beat, and rendered with Seedance 2.5 using the blurred previs as the motion reference. Blender scripts, every prompt, sheets, references, assembly scripts and a runbook. | 20 s | ~$21 (+ ~$9 rejected attempts) | "desert chase recipe", "recreate the desert chase", "Blender previs to Seedance" |
 `_shared/skills/` holds the generic skills the recipes build on. Install them too:
 - [`seedance-video`](_shared/skills/seedance-video/): the five-block Seedance 2.5 "call sheet" prompt, the likeness-check workaround, timeouts and durable URLs.
 - [`video-remake`](_shared/skills/video-remake/): the multi-agent production process, the one-page human sign-off, the cost ledger schema and the QA checklist.

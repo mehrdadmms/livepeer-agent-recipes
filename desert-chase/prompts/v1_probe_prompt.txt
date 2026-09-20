@@ -1,4 +1,4 @@
-capability: seedance-25-ref2v | image_urls: refs/image1..image6 (in order) | video_urls: refs/video1_motion_ref20.mp4 | duration "20", resolution "720p", aspect_ratio "16:9", generate_audio true | ~$11.92 (0.6 x $0.49665/s x (20 s ref + 20 s out)) | EXACT, as run
+capability: seedance-25-ref2v | same refs; video_urls: first 4 s of the motion ref | duration "4", resolution "480p" | ~$1.11 | EXACT, as run. Run this BEFORE the 20 s render.
 [ASSETS]
 @Image1 — CAR A, front three-quarter: a custom 1967 fastback muscle car, pepper-grey metallic with two gloss-black racing stripes over hood, roof and trunk, black mesh grille with two round centre driving lights, silver five-spoke wheels. Heavy, raw V8 that growls and barks.
 @Image2 — CAR A, rear three-quarter: same grey fastback from behind, full-width red tail-light bar, ducktail, twin black stripes, side exhausts.
@@ -12,17 +12,10 @@ capability: seedance-25-ref2v | image_urls: refs/image1..image6 (in order) | vid
 Real-life car-chase cinematography shot on a full-frame cinema camera, real camera cars, a real drone and hard-mounted rigs, like a live-action Need for Speed. Ultra photoreal, natural golden-hour light, long shadows, heat shimmer, dust kicked up from the shoulders, real motion blur, handheld-style shake and road vibration, slight film grain, warm teal-orange grade. Not CGI, not a video game, not animation.
 
 [SUMMARY]
-On an empty Nevada desert highway at golden hour, CAR A flees flat-out and CAR B hunts it down: a calm build-up, two hard cuts that slam onto each car, then a violent chase where CAR B tries to pass and CAR A blocks it.
+On an empty Nevada desert highway at golden hour, CAR A flees at full speed and CAR B hunts it down. We ride right behind CAR A.
 
 [PLOT]
-0–4.3s: calm, high drone shot as in @Video1, slowly descending and pushing in over @Image5; the two cars are small shapes racing toward camera along the winding road, CAR A ahead, CAR B behind. Distant engine drone, wind.
-4.3–7.9s: HARD CUT. Low chase camera right behind CAR A (as @Image2), swaying left and right with a dutch tilt and a sharp jolt on every beat; CAR A weaves across the yellow line, dust off its rear tyres, CAR B far behind. V8 roar.
-7.9–11.5s: HARD CUT. Low chase camera right behind CAR B (as @Image4), swinging the other way; CAR B closes on CAR A ahead, turbo whistle, blow-off flutter.
-11.5–13.3s: HARD CUT. Camera swirls in a fast orbit around both cars from behind-left round to the front-right, both cars sliding slightly through the bend.
-13.3–15.0s: HARD CUT. Low tracking camera ahead of CAR A looking back: CAR A's grille and driving lights (as @Image1) fill the left of frame, CAR B (as @Image3) right behind it.
-15.0–16.8s: HARD CUT. Side-on camera car beside CAR B as it dives left across the centre line to pass CAR A.
-16.8–18.6s: HARD CUT. Camera hard-mounted on CAR A's rear bumper looking back, heavy vibration: CAR A swerves to block, CAR B brakes hard, nose dipping, tyres chirping.
-18.6–20s: HARD CUT. Final wide swirl that orbits 270 degrees and climbs away as both cars blast down the highway into the sun.
+0–4s: one continuous shot as in @Video1: low chase camera 7 m behind CAR A (rear three-quarter as @Image2), swaying left to right with a slight dutch tilt and a sharp jolt on every beat. CAR A weaves across the dashed yellow line at 150 km/h, dust curling off its rear tyres; CAR B is a small blue shape far behind. V8 roar, tyre hum, wind.
 
 [REQUIREMENTS]
 - CAR A is always the grey fastback from @Image1/@Image2 and CAR B is always the blue coupe from @Image3/@Image4; identical shape, colour, stripes, wheels and lights in every frame. Never swap them, never merge them, never add a third car.

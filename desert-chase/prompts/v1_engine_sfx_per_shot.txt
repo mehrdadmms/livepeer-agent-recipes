@@ -1,0 +1,27 @@
+capability: mirelo-sfx-v2v | source_url: that shot cut out of the patched 20 s picture (silent) | inputs.duration is an INTEGER (seconds, rounded up) | ~$0.01/s, 8 calls ~$0.23 | EXACT, as run
+# Why: Seedance put each car's engine on the WRONG car, so its audio was thrown away and the engines were rebuilt shot by shot.
+# Each result is trimmed to its shot length, the eight are joined on the same cuts, then mixed under the music.
+
+## shot A | frames 0-102 (103 f) | duration 5 | key dc-sfx-A-v1
+High aerial drone over a desert highway: two cars far below racing toward camera. Distant, echoing engine sound rolling across the empty desert — a deep 1967 big-block V8 muscle car burble in front and the rising whine of a twin-turbo straight-six sports car behind it. Wind over the drone mic, open-desert air, no music, no voices.
+
+## shot B | frames 103-188 (86 f) | duration 4 | key dc-sfx-B-v1
+Chase camera right behind a grey 1967 fastback muscle car at full throttle. Loud 428 cubic-inch big-block V8 through side-exit exhausts: deep, lumpy, uneven cross-plane burble, thunderous bark, raw mechanical roar, exhaust crackles and pops when it lifts off to weave. Tyre roar on coarse asphalt, gravel spray, wind buffeting the camera. No turbo sounds, no music, no voices.
+
+## shot C | frames 189-274 (86 f) | duration 4 | key dc-sfx-C-v1
+Chase camera right behind a blue 1999 Japanese sports coupe at full throttle. RB26 twin-turbo straight-six: smooth, silky, high-pitched metallic wail climbing toward redline, loud turbo spool whistle, sharp pssh-flutter blow-off valve on the upshift, then boost building again. Faint deep V8 rumble far ahead. Tyre roar, wind. No music, no voices.
+
+## shot D | frames 275-317 (43 f) | duration 2 | key dc-sfx-D-v1
+Camera swirls around two cars sliding through a bend at speed: a deep big-block V8 muscle car roar and a screaming twin-turbo straight-six with turbo whistle both sweep past the camera with strong doppler, tyres squealing, gravel spraying. No music, no voices.
+
+## shot E | frames 318-360 (43 f) | duration 2 | key dc-sfx-E-v1
+Low camera just above the road, head-on: a grey 1967 muscle car charges straight at the lens. Deep, lumpy 428 big-block V8 roar through side pipes getting louder and closer, heavy bark, exhaust crackle; behind it the high whine and turbo whistle of a blue twin-turbo straight-six coupe. Tyre roar on coarse asphalt, dust, wind. No music, no voices.
+
+## shot F | frames 361-403 (43 f) | duration 2 | key dc-sfx-F-v1
+Extreme close-up on the front of a grey 1967 big-block V8 muscle car right at the lens: loud, deep, lumpy V8 roar and chest-thumping bark, then a blue twin-turbo straight-six coupe alongside screaming at high rpm with turbo whistle as the two run side by side. Tyre roar, wind. No music, no voices.
+
+## shot G | frames 404-446 (43 f) | duration 2 | key dc-sfx-G-v1
+Camera behind two cars running side by side: on the left a grey 1967 big-block V8 muscle car with deep lumpy bark and exhaust crackle, on the right a blue twin-turbo straight-six coupe that lifts off hard — loud blow-off valve flutter, turbo chatter, tyres chirping under braking, then the V8 pulling away. Wind, tyre roar. No music, no voices.
+
+## shot H | frames 447-480 (34 f) | duration 2 | key dc-sfx-H-v1
+Wide swirling shot pulling away from two cars blasting down a desert highway into the sun: a big-block V8 roar and a high-revving twin-turbo straight-six wail fading into the distance together, wind rising as the camera climbs. No music, no voices.

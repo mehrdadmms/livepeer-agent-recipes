@@ -1,0 +1,30 @@
+capability: seedance-25-ref2v | image_urls: [refs/fixes/shot04_keyframe.png, refs/image2_car_a_rear34.jpg, refs/image1_car_a_front34.jpg, refs/image4_car_b_rear34.jpg, refs/image3_car_b_front34.jpg, refs/image5_location_wide.jpg] | video_urls: [refs/fixes/shot04_motion_ref_2x_slow.mp4] | duration "4", resolution "720p", aspect_ratio "16:9" | ~$2.26 | EXACT, the 2nd attempt, the one that passed. Output is 2x slow motion: keep every 2nd frame.
+[ASSETS]
+@Image1 — START FRAME AND LOOK: the exact first frame of this shot. Two cars driving AWAY from camera on a curving two-lane desert highway at golden hour: CAR B (blue coupe) nearer, seen from behind-left; CAR A (pepper-grey fastback) further up the road AHEAD of it, also seen from behind, red tail lights visible. Copy its composition, colour grade, road, cliffs and light exactly.
+@Image2 — CAR A, rear three-quarter: custom 1967 fastback muscle car, pepper-grey metallic, two gloss-black stripes, full-width red tail-light bar, ducktail, side exhausts. Heavy raw V8.
+@Image3 — CAR A, front three-quarter: same grey fastback, black mesh grille with two round centre driving lights, silver five-spoke wheels.
+@Image4 — CAR B, rear three-quarter: 1999 Japanese sports coupe, bright blue metallic, tall rear wing, four round tail lights, bronze six-spoke wheels. High-revving turbo inline-six.
+@Image5 — CAR B, front three-quarter: same blue coupe, carbon front lip.
+@Image6 — LOCATION wide: two-lane Nevada desert highway, sagebrush, pale dust, flat-topped rust-brown mesas, hazy blue mountains, golden-hour sun.
+@Video1 — MOTION REFERENCE ONLY: blurred grey-box previs of this exact shot in slow motion. Copy its camera path, orbit speed, car positions in frame and car movement FRAME BY FRAME. Do NOT copy its look: the grey box is a stand-in for CAR A, the blue box for CAR B, flat orange blobs for @Image6.
+
+[SUMMARY]
+One continuous slow-motion orbiting shot: the camera swirls around both cars from behind-left, past their side, round to the front-right, while CAR A leads and CAR B chases close behind it through a bend. Both cars drive forward in the same direction the whole time; CAR A is always in front.
+
+[STYLE]
+Real-life car-chase cinematography shot on a full-frame cinema camera from a fast FPV drone, like a live-action Need for Speed, smooth slow motion. Ultra photoreal, natural golden-hour light, long shadows, heat shimmer, dust kicked up from the shoulders, real motion blur, slight film grain, warm teal-orange grade. Not CGI, not a video game, not animation.
+
+[PLOT]
+0–1.3s: starts exactly on @Image1, camera low behind-left of both cars as in @Video1. CAR B nearer, CAR A ahead of it up the road, both seen from behind, both driving forward away from camera into the bend.
+1.3–2.7s: the camera sweeps forward and round the outside of the cars as in @Video1, passing their side: CAR A leading on the left of frame, CAR B behind it on the right, both noses pointing the same way, wheels spinning forward, dust off the tyres. Around 2.2–2.6s the camera takes one hard jolt and whip as it crosses the road ahead of the cars; both cars stay solid, sharp-edged real cars throughout the jolt, partly veiled by golden dust and sun haze.
+2.7–4s: the camera settles ahead of the cars on the front-right as in @Video1 and looks back toward the low sun: CAR A in front and larger, its grille and driving lights toward camera, CAR B right behind it, both still driving forward toward and past camera.
+
+[REQUIREMENTS]
+- Both cars drive FORWARD in the SAME direction along the road in every frame. Neither car ever reverses, faces the other car, or drives against the other. Wheels always roll forward.
+- CAR A (grey fastback) is ALWAYS ahead of CAR B (blue coupe) along the road. CAR B never passes it, never appears in front of it.
+- FIX FROM LAST ATTEMPT: during the camera jolt the cars vanished and white squiggly light streaks floated in mid-air over the road. That must not happen. No white streaks, no light trails, no scribbles, no glowing lines, no long-exposure effects anywhere. Both cars remain visible as solid physical cars in every single frame, including the jolt; only natural motion blur and dust.
+- Exactly two cars, never a third. Never swap or merge them. CAR A identical to @Image2/@Image3, CAR B identical to @Image4/@Image5 in every frame.
+- One continuous take, no cuts. Follow @Video1's camera path and car positions frame by frame.
+- Every environment detail comes from @Image1/@Image6: no orange blobs, no smooth cylinders, no grey-box geometry.
+- Audio: engines, tyres, wind only. No music, no dialogue.
+- No text, no licence-plate characters, no badges, no logos, no watermark, no people outside the cars.

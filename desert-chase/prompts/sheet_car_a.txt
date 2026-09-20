@@ -1,0 +1,8 @@
+capability: gpt-image-edit | source_url: refs/layouts/car1_layout.png (Blender 2x2 layout) | defaults, output 1536x1024 | $0.23 | key dc-car1-sheet-v1 | EXACT, as run, first try
+Turn this 2x2 layout into a professional automotive reference sheet made of FOUR REAL PHOTOGRAPHS of the SAME single car. The blocky red placeholder only marks camera angle, distance and position — replace it completely with the real car. Panel order: top-left front three-quarter, top-right full side profile, bottom-left rear three-quarter, bottom-right straight-on front.
+
+THE CAR (identical in all four panels): 1967 Ford Mustang fastback "Eleanor" build, Shelby GT500-style. Pepper Grey metallic paint with two gloss-black racing stripes running over the hood, roof and trunk lid. Long fastback roofline, hood with twin scoops, side scoops behind the doors, flared wheel arches, black mesh grille with two round centre-mounted driving lights, black side-exit exhaust pipes under the rocker panels, full-width sequential tail-light bar with ducktail spoiler, 17-inch silver five-spoke wheels on low-profile tyres. Blank plain licence plates.
+
+LOCATION: two-lane asphalt highway through the Nevada desert, sagebrush, pale alkali flats and rocky buttes behind, low warm golden-hour sun, long shadows.
+
+LOOK: genuine photographs shot on a full-frame camera, 50mm lens, real paint reflections of sky and desert, fine road dust on the lower panels, natural contrast, slight film grain. Ultra realistic. NOT CGI, not a 3D render, not an illustration, not a toy. No text, no labels, no logos, no watermark. Thin white gutters between the four panels.

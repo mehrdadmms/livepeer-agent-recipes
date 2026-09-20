@@ -1,0 +1,26 @@
+capability: seedance-25-ref2v | image_urls: [refs/fixes/shot02_start_frame_cleaned.png, refs/image2_car_a_rear34.jpg, refs/image5_location_wide.jpg, refs/image6_location_road.jpg] | video_urls: [refs/fixes/shot02_motion_ref.mp4] | duration "4", resolution "720p", aspect_ratio "16:9" | ~$2.26 | EXACT, the 4th attempt, the one that passed
+[ASSETS]
+@Image1 — START FRAME AND LOOK: the exact first frame of this shot. A pepper-grey 1967 fastback muscle car with two gloss-black stripes and red tail lights, seen from directly behind on an empty two-lane desert highway at golden hour, open road ahead of it. Copy its composition, colour grade, road, mesas and light exactly.
+@Image2 — THE CAR, rear three-quarter identity reference: the same grey fastback, red tail lights, ducktail, twin black stripes, side exhausts. Heavy raw V8 that growls and barks.
+@Image3 — LOCATION wide: two-lane Nevada desert highway, sagebrush, pale dust, flat-topped rust-brown mesas, hazy mountains, golden-hour sun. Wind, tyre roar on coarse asphalt.
+@Image4 — LOCATION road level: the same highway, double yellow centre line, white edge lines, gravel shoulders.
+@Video1 — MOTION REFERENCE ONLY: blurred grey-box previs of this exact shot. Copy its camera position, camera sway, road curvature, the car's position in frame and its movement FRAME BY FRAME. Do NOT copy its look: the boxy placeholder and flat orange blobs are stand-ins for @Image2 and @Image3/@Image4.
+
+[SUMMARY]
+A solitary grey fastback drives flat-out down a remote, deserted desert highway at golden hour, filmed from low and close behind as it weaves across the double yellow line through a long gentle bend. It is a lonely road: just this one car, the open asphalt ahead of it, the sagebrush and the mesas.
+
+[STYLE]
+Real-life automotive cinematography shot on a full-frame cinema camera from a real camera car. Ultra photoreal, natural golden-hour light, long shadows, heat shimmer, dust kicked up from the rear tyres, real motion blur, handheld-style shake and road vibration, slight film grain, warm earthy grade of tans, ochres and rust. Not CGI, not a video game, not animation.
+
+[PLOT]
+0–4s: starts exactly on @Image1. Low tracking camera about two car lengths behind the fastback, matching @Video1 frame by frame: the camera sways left and right with a slight dutch tilt and a jolt on each beat; the fastback drives forward away from camera at high speed, drifts right then left across the double yellow line as the road bends, dust streaming off its rear tyres. As the bend opens to the left, the road beyond it comes into view: bare sunlit asphalt curving away between sagebrush and boulders, completely still, nothing on it, only heat shimmer. V8 roar, tyre noise, wind.
+
+[REQUIREMENTS]
+- The grey fastback from @Image2 is the single subject and the only man-made object in the whole shot. Everything else in frame is landscape: asphalt, painted lines, gravel, sagebrush, boulders, mesas, sky.
+- The road ahead of the fastback, the distant road and the far bend stay bare, still, sunlit asphalt in every frame, exactly as in @Image1.
+- Palette is earth tones only: tan, ochre, rust, grey asphalt, pale sky.
+- We only ever see the fastback's rear; it is identical to @Image1/@Image2 in every frame: shape, pepper-grey colour, black stripes, red tail lights, wheels.
+- One continuous take, no cuts. Follow @Video1's camera path and the car's position frame by frame.
+- Every environment detail comes from @Image1/@Image3/@Image4; none of the previs placeholder shapes.
+- Audio: one V8 engine, tyres, wind only. No music, no dialogue.
+- No text, no licence-plate characters, no badges, no logos, no watermark, no people.
