@@ -1,0 +1,31 @@
+[ASSETS]
+@Image1 — CAR A, front three-quarter: a custom 1967 fastback muscle car, pepper-grey metallic with two gloss-black racing stripes over hood, roof and trunk, black mesh grille with two round centre driving lights, silver five-spoke wheels. Heavy, raw V8 that growls and barks.
+@Image2 — CAR A, rear three-quarter: same grey fastback from behind, full-width red tail-light bar, ducktail, twin black stripes, side exhausts.
+@Image3 — CAR B, front three-quarter: a 1999 Japanese sports coupe (R34 shape), Bayside Blue metallic, carbon front lip, bronze six-spoke wheels. High-revving inline-six with turbo whistle and blow-off flutter.
+@Image4 — CAR B, rear three-quarter: same blue coupe from behind, tall rear wing, four round tail lights.
+@Image5 — LOCATION wide: two-lane desert highway through the Nevada Great Basin, sagebrush, pale alkali dust, flat-topped rust-brown mesas, hazy blue mountains, golden-hour sun. Wind, tyre roar on coarse asphalt.
+@Image6 — LOCATION road level: the same highway, dashed yellow centre line, white edge lines, gravel shoulders.
+@Video1 — MOTION REFERENCE ONLY: a blurred grey-box previs. Copy its camera positions, camera moves, cut timing, car positions and car movement exactly. Do NOT copy its look: its boxy placeholder cars, flat orange blobs and cylinders are stand-ins for @Image1–@Image4 and @Image5–@Image6.
+
+[STYLE]
+Real-life car-chase cinematography shot on a full-frame cinema camera, real camera cars, a real drone and hard-mounted rigs, like a live-action Need for Speed. Ultra photoreal, natural golden-hour light, long shadows, heat shimmer, dust kicked up from the shoulders, real motion blur, handheld-style shake and road vibration, slight film grain, warm teal-orange grade. Not CGI, not a video game, not animation.
+
+[SUMMARY]
+On an empty Nevada desert highway at golden hour, CAR A flees flat-out and CAR B hunts it down: a calm build-up, two hard cuts that slam onto each car, then a violent chase where CAR B tries to pass and CAR A blocks it.
+
+[PLOT]
+0–4.3s: calm, high drone shot as in @Video1, slowly descending and pushing in over @Image5; the two cars are small shapes racing toward camera along the winding road, CAR A ahead, CAR B behind. Distant engine drone, wind.
+4.3–7.9s: HARD CUT. Low chase camera right behind CAR A (as @Image2), swaying left and right with a dutch tilt and a sharp jolt on every beat; CAR A weaves across the yellow line, dust off its rear tyres, CAR B far behind. V8 roar.
+7.9–11.5s: HARD CUT. Low chase camera right behind CAR B (as @Image4), swinging the other way; CAR B closes on CAR A ahead, turbo whistle, blow-off flutter.
+11.5–13.3s: HARD CUT. Camera swirls in a fast orbit around both cars from behind-left round to the front-right, both cars sliding slightly through the bend.
+13.3–15.0s: HARD CUT. Low tracking camera ahead of CAR A looking back: CAR A's grille and driving lights (as @Image1) fill the left of frame, CAR B (as @Image3) right behind it.
+15.0–16.8s: HARD CUT. Side-on camera car beside CAR B as it dives left across the centre line to pass CAR A.
+16.8–18.6s: HARD CUT. Camera hard-mounted on CAR A's rear bumper looking back, heavy vibration: CAR A swerves to block, CAR B brakes hard, nose dipping, tyres chirping.
+18.6–20s: HARD CUT. Final wide swirl that orbits 270 degrees and climbs away as both cars blast down the highway into the sun.
+
+[REQUIREMENTS]
+- CAR A is always the grey fastback from @Image1/@Image2 and CAR B is always the blue coupe from @Image3/@Image4; identical shape, colour, stripes, wheels and lights in every frame. Never swap them, never merge them, never add a third car.
+- Every environment detail comes from @Image5/@Image6 from the first frame: no orange blobs, no smooth cylinders, no grey-box geometry from @Video1.
+- Follow @Video1's camera path and cut timing frame for frame; hard cuts only where @Video1 cuts.
+- Audio: engines, tyres, wind and gear shifts only. No music, no dialogue.
+- No text, no licence-plate characters, no badges, no logos, no watermark, no people outside the cars.
