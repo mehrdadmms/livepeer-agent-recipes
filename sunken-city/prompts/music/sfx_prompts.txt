@@ -1,0 +1,4 @@
+A (0-4 s, mirelo-sfx): running footsteps on hollow wooden pier planks, heavy breathing, distant sea waves and gulls, footsteps accelerating, wind rising
+B (hit, mirelo-sfx): huge cannonball splash into the sea, heavy water impact with deep sub boom, then muffled underwater rush with bubbles fizzing
+C (dive, mirelo-sfx): underwater ambience, low sonar-like drone, distant metal creaks, fish school flutter, whoosh of swimming past a bus, rising bubble streams, warm electric hum
+D (end, mirelo-sfx): muffled glass tap and a soft magical sparkle sting underwater, then a final low resolving tone

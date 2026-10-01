@@ -1,0 +1,1 @@
+see prompt_v2.txt (sonilo-t2m, duration 26 s) and sfx_prompts_v2.txt (mirelo-sfx A 4 s, B 5 s, C 15 s, D 5 s)
